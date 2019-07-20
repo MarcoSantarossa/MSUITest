@@ -51,6 +51,8 @@ final class UITestCoordinator: Coordinator {
             return ButtonCoordinator(navigationController: rootViewController)
         case TextFieldCoordinator.identifier:
             return TextFieldCoordinator(navigationController: rootViewController)
+        case ImageCoordinator.identifier:
+            return ImageCoordinator(navigationController: rootViewController)
         default:
             fatalError("Coordinator under UI tests not found")
         }
