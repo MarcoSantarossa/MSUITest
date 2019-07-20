@@ -63,7 +63,7 @@
 		A90C849E22E3165000A759D0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B0C7C8A422C2333700B6D1CA /* AIP */,
+				B0C7C84922C22EDA00B6D1CA /* Extensions */,
 				A98B9A8922E3381E006B38BF /* LaunchArguments */,
 				B0C7C87622C22F0900B6D1CA /* PageObjects */,
 			);
@@ -94,6 +94,22 @@
 			path = LaunchArguments;
 			sourceTree = "<group>";
 		};
+		A9E4073422E396DA00AD7952 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B0C7C8A722C2343A00B6D1CA /* NSObject+Accessibility.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A9E4073522E396DF00AD7952 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				B0C7C8A522C2333700B6D1CA /* AccessibilityIdentifierProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
 		B0C7C80E22C22DDC00B6D1CA = {
 			isa = PBXGroup;
 			children = (
@@ -113,8 +129,8 @@
 		B0C7C81A22C22DDC00B6D1CA /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B0C7C8A422C2333700B6D1CA /* AIP */,
 				A90C849E22E3165000A759D0 /* Core */,
-				B0C7C84922C22EDA00B6D1CA /* Extensions */,
 				A90C849B22E314D700A759D0 /* SupportingFiles */,
 			);
 			path = Source;
@@ -123,7 +139,6 @@
 		B0C7C84922C22EDA00B6D1CA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B0C7C8A722C2343A00B6D1CA /* NSObject+Accessibility.swift */,
 				B0C7C84A22C22EDA00B6D1CA /* XCUIApplication+Lifecycle.swift */,
 				B0C7C84B22C22EDA00B6D1CA /* XCUIElement+TextField.swift */,
 				A90C84A122E31A4B00A759D0 /* XCUIElement+Timeout.swift */,
@@ -155,7 +170,8 @@
 		B0C7C8A422C2333700B6D1CA /* AIP */ = {
 			isa = PBXGroup;
 			children = (
-				B0C7C8A522C2333700B6D1CA /* AccessibilityIdentifierProvider.swift */,
+				A9E4073522E396DF00AD7952 /* Provider */,
+				A9E4073422E396DA00AD7952 /* Extensions */,
 			);
 			path = AIP;
 			sourceTree = "<group>";
