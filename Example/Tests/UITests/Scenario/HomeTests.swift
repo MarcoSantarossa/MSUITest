@@ -29,6 +29,7 @@ class HomeTests: XCTestCase {
             .givenPage()
 
             .thenIShouldSee(element: .mainView, timeout: 0.3)
+            .thenIShouldSeeNavigationBar(text: "Home")
             .thenIShouldSee(element: .tableView)
             .thenIShouldSee(in: .tableView, at: 0, text: "label")
             .thenIShouldSee(in: .tableView, at: 1, text: "button")
