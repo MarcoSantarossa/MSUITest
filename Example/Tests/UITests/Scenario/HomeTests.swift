@@ -75,4 +75,37 @@ class HomeTests: XCTestCase {
 
             .thenIShouldSee(element: .mainView)
     }
+
+    func test_whenTapTextFieldCell_seeLabelView() {
+        HomePage()
+            .givenPage()
+
+            .whenTapCell(in: .tableView, at: 2)
+
+            .shouldSeeTextFieldPage()
+    }
+
+    func test_whenTapTextFieldCellAndBackButton_seeMainView() {
+        HomePage()
+            .givenPage()
+
+            .whenTapCell(in: .tableView, at: 2)
+            .whenTapBackButton()
+
+            .thenIShouldSee(element: .mainView)
+    }
+
+    func test_whenTapTextFieldCellAndFocusAndBackButton_doNotSeeKeyboard() {
+        HomePage()
+            .givenPage()
+
+            .whenTapCell(in: .tableView, at: 2)
+            .whenFocusTextField()
+
+            .delay(0.2)
+
+            .whenTapBackButton()
+
+            .thenIShouldNotSeeKeyboard()
+    }
 }
