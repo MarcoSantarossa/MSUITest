@@ -21,49 +21,14 @@
 //
 
 import MSUITest
-import XCTest
 
-final class HomePage {
-    typealias Element = HomeAIP.Element
+final class LabelAIP: AIP {
+    static var mainIdentifier: String = "label"
 }
 
-extension HomePage: PageObjectUIElementProvider, PageObject {
-    func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
-        let query = self.query(for: element, in: queryProvider)
-
-        let identifier = HomeAIP.elementIdentifier(for: element)
-        return query[identifier]
-    }
-
-    private func query(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElementQuery {
-        switch element {
-        case .mainView:
-            return queryProvider.otherElements
-        case .tableView:
-            return queryProvider.tables
-        }
-    }
-}
-
-// MARK: - Given
-extension HomePage {
-    func givenPage() -> HomePage {
-        XCUIApplication().launchTestMode(customArguments: [
-            "-coordinatorUnderUITest", "HomeCoordinator"
-            ])
-
-        return self
-    }
-}
-
-// MARK: - Should
-extension HomePage {
-    @discardableResult
-    func shouldSeeLabelPage() -> HomePage {
-
-        LabelPage()
-            .thenIShouldSee(element: .mainView)
-
-        return self
+extension LabelAIP {
+    enum Element: String {
+        case mainView
+        case label
     }
 }

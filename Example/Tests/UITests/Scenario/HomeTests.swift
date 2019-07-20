@@ -37,4 +37,13 @@ class HomeTests: XCTestCase {
             .thenIShouldSee(in: .tableView, at: 3, text: "image")
             .thenIShouldSee(in: .tableView, at: 4, text: "alert")
     }
+
+    func test_whenTapLabelCell_seeLabelView() {
+        HomePage()
+            .givenPage()
+
+            .whenTapCell(in: .tableView, at: 0)
+
+            .shouldSeeLabelPage()
+    }
 }

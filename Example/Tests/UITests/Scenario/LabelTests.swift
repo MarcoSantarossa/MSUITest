@@ -20,50 +20,16 @@
 //    SOFTWARE.
 //
 
-import MSUITest
 import XCTest
 
-final class HomePage {
-    typealias Element = HomeAIP.Element
-}
+class LabelTests: XCTestCase {
 
-extension HomePage: PageObjectUIElementProvider, PageObject {
-    func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
-        let query = self.query(for: element, in: queryProvider)
-
-        let identifier = HomeAIP.elementIdentifier(for: element)
-        return query[identifier]
-    }
-
-    private func query(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElementQuery {
-        switch element {
-        case .mainView:
-            return queryProvider.otherElements
-        case .tableView:
-            return queryProvider.tables
-        }
-    }
-}
-
-// MARK: - Given
-extension HomePage {
-    func givenPage() -> HomePage {
-        XCUIApplication().launchTestMode(customArguments: [
-            "-coordinatorUnderUITest", "HomeCoordinator"
-            ])
-
-        return self
-    }
-}
-
-// MARK: - Should
-extension HomePage {
-    @discardableResult
-    func shouldSeeLabelPage() -> HomePage {
-
+    func test_whenLoadView_seeExpectedElements() {
         LabelPage()
-            .thenIShouldSee(element: .mainView)
+            .givenPage()
 
-        return self
+            .thenIShouldSee(element: .mainView, timeout: 0.3)
+            .thenIShouldSeeNavigationBar(text: "Label")
+            .thenIShouldSee(element: .label, text: "Welcome ✌🏻")
     }
 }

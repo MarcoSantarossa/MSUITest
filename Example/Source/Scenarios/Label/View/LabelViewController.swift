@@ -20,50 +20,23 @@
 //    SOFTWARE.
 //
 
-import MSUITest
-import XCTest
+import UIKit
 
-final class HomePage {
-    typealias Element = HomeAIP.Element
-}
+class LabelViewController: UIViewController {
 
-extension HomePage: PageObjectUIElementProvider, PageObject {
-    func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
-        let query = self.query(for: element, in: queryProvider)
+    @IBOutlet private var label: UILabel!
 
-        let identifier = HomeAIP.elementIdentifier(for: element)
-        return query[identifier]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        title = "Label"
+
+        addAccessibility()
     }
 
-    private func query(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElementQuery {
-        switch element {
-        case .mainView:
-            return queryProvider.otherElements
-        case .tableView:
-            return queryProvider.tables
-        }
-    }
-}
-
-// MARK: - Given
-extension HomePage {
-    func givenPage() -> HomePage {
-        XCUIApplication().launchTestMode(customArguments: [
-            "-coordinatorUnderUITest", "HomeCoordinator"
-            ])
-
-        return self
-    }
-}
-
-// MARK: - Should
-extension HomePage {
-    @discardableResult
-    func shouldSeeLabelPage() -> HomePage {
-
-        LabelPage()
-            .thenIShouldSee(element: .mainView)
-
-        return self
+    private func addAccessibility() {
+        let aip = LabelAIP.self
+        view.addAccessibility(aip: aip, element: .mainView)
+        label.addAccessibility(aip: aip, element: .label)
     }
 }
