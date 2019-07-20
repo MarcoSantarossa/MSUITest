@@ -32,6 +32,8 @@ enum HomeCell: String, CaseIterable {
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet private var tableView: UITableView!
+
     private let dataSource = HomeCell.allCases
     private let cellId = "HomeCell"
 
@@ -39,6 +41,14 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         title = "Home"
+
+        addAccessibility()
+    }
+
+    private func addAccessibility() {
+        let aip = HomeAIP.self
+        view.addAccessibility(aip: aip, element: .mainView)
+        tableView.addAccessibility(aip: aip, element: .tableView)
     }
 }
 

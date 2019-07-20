@@ -29,5 +29,6 @@ final class HomeAIP: AIP {
 extension HomeAIP {
     enum Element: String {
         case mainView
+        case tableView
     }
 }
