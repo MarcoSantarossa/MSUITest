@@ -29,7 +29,7 @@ public protocol PageObject: PageObjectWhen, PageObjectShould {
     /// Add a delay before continuing with the UI test flow.
     ///
     /// - Parameter delay: Seconds to add as delay
-    /// - Returns: itself to use in a chain of calls
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func delay(_ delay: TimeInterval) -> Self
 
