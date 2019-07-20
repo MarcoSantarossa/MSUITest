@@ -23,6 +23,11 @@
 import UIKit
 
 extension UIAccessibilityIdentification where Self: NSObject {
+    /// Add an accessibility identifier to a UIKit element.
+    ///
+    /// - Parameters:
+    ///   - aip: AIP to provide the Element.
+    ///   - element: Element of AIP to assign to the UIKit element.
     public func addAccessibility<T: AccessibilityIdentifierProvider>(aip: T.Type, element: T.Element) {
         let id = T.elementIdentifier(for: element)
         accessibilityIdentifier = id
