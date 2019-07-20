@@ -22,25 +22,43 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+enum HomeCell: String, CaseIterable {
+    case label
+    case button
+    case textField
+    case image
+    case alert
+}
 
-    var window: UIWindow?
-    private var mainCoordinator: Coordinator!
+class HomeViewController: UIViewController {
 
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    private let dataSource = HomeCell.allCases
+    private let cellId = "HomeCell"
 
-        let window = UIWindow()
-        let rootVC = UINavigationController()
-        window.rootViewController = rootVC
-        window.makeKeyAndVisible()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        self.window = window
+        title = "Home"
+    }
+}
 
-        mainCoordinator = MainCoordinator(rootViewController: rootVC)
-        mainCoordinator.start()
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
 
-        return true
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) ??
+                    UITableViewCell(style: .default, reuseIdentifier: cellId)
+
+        cell.textLabel?.text = dataSource[indexPath.row].rawValue
+
+        return cell
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(#function)
     }
 }

@@ -20,27 +20,14 @@
 //    SOFTWARE.
 //
 
-import UIKit
+import MSUITest
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class HomeAIP: AIP {
+    static var mainIdentifier: String = "home"
+}
 
-    var window: UIWindow?
-    private var mainCoordinator: Coordinator!
-
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        let window = UIWindow()
-        let rootVC = UINavigationController()
-        window.rootViewController = rootVC
-        window.makeKeyAndVisible()
-
-        self.window = window
-
-        mainCoordinator = MainCoordinator(rootViewController: rootVC)
-        mainCoordinator.start()
-
-        return true
+extension HomeAIP {
+    enum Element: String {
+        case mainView
     }
 }

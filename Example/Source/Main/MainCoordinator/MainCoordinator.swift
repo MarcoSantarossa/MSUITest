@@ -24,16 +24,18 @@ import UIKit
 
 final class MainCoordinator: Coordinator {
 
-    private unowned let rootViewController: UIViewController
+    private var coords = [Coordinator]()
 
-    init(rootViewController: UIViewController) {
+    private unowned let rootViewController: UINavigationController
+
+    init(rootViewController: UINavigationController) {
         self.rootViewController = rootViewController
     }
 
     func start() {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
-        rootViewController.addChild(viewController)
-        rootViewController.view.addSubview(viewController.view)
-        viewController.didMove(toParent: rootViewController)
+        let homeCoord = HomeCoordinator(navigationController: rootViewController)
+        homeCoord.start()
+
+        coords.append(homeCoord)
     }
 }
