@@ -49,7 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func createMainCoordinator(with rootViewController: UINavigationController) -> Coordinator {
         if let coordinatorUnderUITest = UserDefaults.standard.string(forKey: "coordinatorUnderUITest") {
-            return UITestCoordinator(rootViewController: rootViewController, coordinatorUnderUITest: coordinatorUnderUITest)
+            return UITestCoordinator(rootViewController: rootViewController,
+                                     coordinatorUnderUITest: coordinatorUnderUITest)
         } else {
             return MainCoordinator(rootViewController: rootViewController)
         }
