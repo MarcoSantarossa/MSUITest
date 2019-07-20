@@ -23,15 +23,15 @@
 import MSUITest
 import XCTest
 
-final class HomePage {
-    typealias Element = HomeAIP.Element
+final class ImagePage {
+    typealias Element = ImageAIP.Element
 }
 
-extension HomePage: PageObjectUIElementProvider, PageObject {
+extension ImagePage: PageObjectUIElementProvider, PageObject {
     func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
         let query = self.query(for: element, in: queryProvider)
 
-        let identifier = HomeAIP.elementIdentifier(for: element)
+        let identifier = ImageAIP.elementIdentifier(for: element)
         return query[identifier]
     }
 
@@ -39,67 +39,18 @@ extension HomePage: PageObjectUIElementProvider, PageObject {
         switch element {
         case .mainView:
             return queryProvider.otherElements
-        case .tableView:
-            return queryProvider.tables
+        case .imageView:
+            return queryProvider.images
         }
     }
 }
 
 // MARK: - Given
-extension HomePage {
-    func givenPage() -> HomePage {
+extension ImagePage {
+    func givenPage() -> ImagePage {
         XCUIApplication().launchTestMode(customArguments: [
-            "-coordinatorUnderUITest", "HomeCoordinator"
+            "-coordinatorUnderUITest", "ImageCoordinator"
             ])
-
-        return self
-    }
-}
-
-// MARK: - When
-extension HomePage {
-    func whenFocusTextField() -> HomePage {
-        TextFieldPage()
-            .whenTap(element: .textField)
-
-        return self
-    }
-}
-
-// MARK: - Should
-extension HomePage {
-    @discardableResult
-    func shouldSeeLabelPage() -> HomePage {
-
-        LabelPage()
-            .thenIShouldSee(element: .mainView)
-
-        return self
-    }
-
-    @discardableResult
-    func shouldSeeButtonPage() -> HomePage {
-
-        ButtonPage()
-            .thenIShouldSee(element: .mainView)
-
-        return self
-    }
-
-    @discardableResult
-    func shouldSeeTextFieldPage() -> HomePage {
-
-        TextFieldPage()
-            .thenIShouldSee(element: .mainView)
-
-        return self
-    }
-
-    @discardableResult
-    func shouldSeeImagePage() -> HomePage {
-
-        ImagePage()
-            .thenIShouldSee(element: .mainView)
 
         return self
     }
