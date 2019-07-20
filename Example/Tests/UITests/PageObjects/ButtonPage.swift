@@ -20,38 +20,38 @@
 //    SOFTWARE.
 //
 
-import UIKit
+import MSUITest
+import XCTest
 
-final class HomeCoordinator: Coordinator {
+final class ButtonPage {
+    typealias Element = ButtonAIP.Element
+}
 
-    private unowned let navigationController: UINavigationController
+extension ButtonPage: PageObjectUIElementProvider, PageObject {
+    func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
+        let query = self.query(for: element, in: queryProvider)
 
-    private var coords = [String: Coordinator]()
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+        let identifier = ButtonAIP.elementIdentifier(for: element)
+        return query[identifier]
     }
 
-    func start() {
-        let onCellSeleted: (HomeCell) -> Void = { [weak self] in
-            guard let self = self else { return }
-            let coordinator = self.makeCoordinator(for: $0)
-            coordinator.start()
-            self.coords[type(of: coordinator).identifier] = coordinator
-        }
-
-        let view = HomeViewController(onCellSelected: onCellSeleted)
-        navigationController.setViewControllers([view], animated: false)
-    }
-
-    private func makeCoordinator(for cell: HomeCell) -> Coordinator {
-        switch cell {
-        case .label:
-            return LabelCoordinator(navigationController: navigationController)
+    private func query(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElementQuery {
+        switch element {
+        case .mainView:
+            return queryProvider.otherElements
         case .button:
-            return ButtonCoordinator(navigationController: navigationController)
-        default:
-            fatalError()
+            return queryProvider.buttons
         }
+    }
+}
+
+// MARK: - Given
+extension ButtonPage {
+    func givenPage() -> ButtonPage {
+        XCUIApplication().launchTestMode(customArguments: [
+            "-coordinatorUnderUITest", "ButtonCoordinator"
+            ])
+
+        return self
     }
 }

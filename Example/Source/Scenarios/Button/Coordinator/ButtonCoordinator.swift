@@ -22,36 +22,16 @@
 
 import UIKit
 
-final class HomeCoordinator: Coordinator {
+final class ButtonCoordinator: Coordinator {
 
     private unowned let navigationController: UINavigationController
-
-    private var coords = [String: Coordinator]()
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
     func start() {
-        let onCellSeleted: (HomeCell) -> Void = { [weak self] in
-            guard let self = self else { return }
-            let coordinator = self.makeCoordinator(for: $0)
-            coordinator.start()
-            self.coords[type(of: coordinator).identifier] = coordinator
-        }
-
-        let view = HomeViewController(onCellSelected: onCellSeleted)
-        navigationController.setViewControllers([view], animated: false)
-    }
-
-    private func makeCoordinator(for cell: HomeCell) -> Coordinator {
-        switch cell {
-        case .label:
-            return LabelCoordinator(navigationController: navigationController)
-        case .button:
-            return ButtonCoordinator(navigationController: navigationController)
-        default:
-            fatalError()
-        }
+        let view = ButtonViewController()
+        navigationController.pushViewController(view, animated: true)
     }
 }
