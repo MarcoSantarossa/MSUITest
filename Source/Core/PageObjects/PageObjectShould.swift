@@ -96,7 +96,7 @@ extension PageObjectShould where Self: PageObjectUIElementProvider {
     }
 
     @discardableResult
-    public func thenIShouldSee(in table: Element, at index: Int, cellElement: Element, text: String? = nil, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
+    public func thenIShouldSee(in table: Self.Element, at index: Int, cellElement: Self.Element, text: String? = nil, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
         let tableUIElement = self.uiElement(for: table, in: XCUIApplication())
         tableUIElement.waitIfNeeded(timeout: timeout)
 
@@ -119,7 +119,7 @@ extension PageObjectShould where Self: PageObjectUIElementProvider {
     }
 
     @discardableResult
-    public func thenIShouldSee(in table: Element, at index: Int, text: String, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
+    public func thenIShouldSee(in table: Self.Element, at index: Int, text: String, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
         let tableUIElement = self.uiElement(for: table, in: XCUIApplication())
         tableUIElement.waitIfNeeded(timeout: timeout)
 

@@ -20,35 +20,18 @@
 //    SOFTWARE.
 //
 
-import MSUITest
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class HomeCoordinator: Coordinator {
 
-    var window: UIWindow?
-    private var mainCoordinator: Coordinator!
+    private unowned let navigationController: UINavigationController
 
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        let window = UIWindow()
-        let rootVC = UINavigationController()
-        window.rootViewController = rootVC
-        window.makeKeyAndVisible()
-
-        self.window = window
-
-        mainCoordinator = MainCoordinator(rootViewController: rootVC)
-        mainCoordinator.start()
-
-        disableAnimationIfNeeded()
-
-        return true
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 
-    private func disableAnimationIfNeeded() {
-        guard UITestLaunchArgument.animationsDisabled.isActive else { return }
-        UIView.setAnimationsEnabled(false)
+    func start() {
+        let view = HomeViewController()
+        navigationController.setViewControllers([view], animated: false)
     }
 }

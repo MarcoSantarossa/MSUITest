@@ -20,36 +20,20 @@
 //    SOFTWARE.
 //
 
-import MSUITest
 import XCTest
 
-final class MainPage {
-    typealias Element = MainAIP.Element
-}
+class HomeTests: XCTestCase {
 
-extension MainPage: PageObjectUIElementProvider, PageObject {
-    func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
-        let query = self.query(for: element, in: queryProvider)
+    func test_whenLoadView_seeExpectedElements() {
+        HomePage()
+            .givenPage()
 
-        let identifier = MainAIP.elementIdentifier(for: element)
-        return query[identifier]
-    }
-
-    private func query(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElementQuery {
-        switch element {
-        case .label:
-            return queryProvider.staticTexts
-        case .mainView:
-            return queryProvider.otherElements
-        }
-    }
-}
-
-// MARK: - Given
-extension MainPage {
-    func givenPage() -> MainPage {
-        XCUIApplication().launchTestMode()
-
-        return self
+            .thenIShouldSee(element: .mainView, timeout: 0.3)
+            .thenIShouldSee(element: .tableView)
+            .thenIShouldSee(in: .tableView, at: 0, text: "label")
+            .thenIShouldSee(in: .tableView, at: 1, text: "button")
+            .thenIShouldSee(in: .tableView, at: 2, text: "textField")
+            .thenIShouldSee(in: .tableView, at: 3, text: "image")
+            .thenIShouldSee(in: .tableView, at: 4, text: "alert")
     }
 }

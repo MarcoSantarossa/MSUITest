@@ -76,7 +76,7 @@ extension PageObjectWhen where Self: PageObjectUIElementProvider {
 
 extension PageObjectWhen where Self: PageObjectUIElementProvider {
     @discardableResult
-    public func whenTap(element: Element, coordinates: CGPoint? = nil, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
+    public func whenTap(element: Self.Element, coordinates: CGPoint? = nil, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
         let uiElement = self.uiElement(for: element, in: XCUIApplication())
         uiElement.waitIfNeeded(timeout: timeout)
 
@@ -94,7 +94,7 @@ extension PageObjectWhen where Self: PageObjectUIElementProvider {
     }
 
     @discardableResult
-    public func whenTapCell(in parentElement: Element, at index: Int, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
+    public func whenTapCell(in parentElement: Self.Element, at index: Int, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
         let tableElement = self.uiElement(for: parentElement, in: XCUIApplication())
         tableElement.waitIfNeeded(timeout: timeout)
 
@@ -126,7 +126,7 @@ extension PageObjectWhen where Self: PageObjectUIElementProvider {
     }
 
     @discardableResult
-    public func whenType(_ text: String, in element: Element, shouldReplace: Bool = true, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
+    public func whenType(_ text: String, in element: Self.Element, shouldReplace: Bool = true, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
         // Tap to get the focus
         whenTap(element: element, timeout: timeout, swipeAction: swipeAction)
 
@@ -195,7 +195,7 @@ extension PageObjectWhen where Self: PageObjectUIElementProvider {
     }
 
     @discardableResult
-    public func whenSlide(element: Element, toNormalizedSliderPosition: CGFloat, timeout: TimeInterval?) -> Self {
+    public func whenSlide(element: Self.Element, toNormalizedSliderPosition: CGFloat, timeout: TimeInterval?) -> Self {
         let uiElement = self.uiElement(for: element, in: XCUIApplication())
         uiElement.waitIfNeeded(timeout: timeout)
 
