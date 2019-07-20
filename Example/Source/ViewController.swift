@@ -25,9 +25,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet private var label: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         addAccessibility()
         // Do any additional setup after loading the view.
     }
@@ -36,6 +37,4 @@ class ViewController: UIViewController {
         view.addAccessibility(aip: MainAIP.self, element: .mainView)
         label.addAccessibility(aip: MainAIP.self, element: .label)
     }
-
 }
-
