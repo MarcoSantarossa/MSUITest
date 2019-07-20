@@ -45,7 +45,6 @@ public protocol PageObjectShould: AnyObject {
     func thenIShouldSeeAlert(title: String, message: String, timeout: TimeInterval?) -> Self
 }
 
-
 extension PageObjectShould where Self: PageObjectUIElementProvider {
     private func errorMessage(for element: Self.Element, in functionName: StaticString) -> String {
         return "\(functionName) for element \(element)"

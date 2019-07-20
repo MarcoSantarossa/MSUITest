@@ -168,6 +168,7 @@
 			buildConfigurationList = B0C7C82022C22DDC00B6D1CA /* Build configuration list for PBXNativeTarget "MSUITest" */;
 			buildPhases = (
 				B0C7C81322C22DDC00B6D1CA /* Headers */,
+				A90C84AB22E3264700A759D0 /* Swiftlint */,
 				B0C7C81422C22DDC00B6D1CA /* Sources */,
 				B0C7C81522C22DDC00B6D1CA /* Frameworks */,
 				B0C7C81622C22DDC00B6D1CA /* Resources */,
@@ -221,6 +222,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A90C84AB22E3264700A759D0 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B0C7C81422C22DDC00B6D1CA /* Sources */ = {

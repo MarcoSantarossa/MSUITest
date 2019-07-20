@@ -27,7 +27,7 @@ class MainTests: XCTestCase {
     func test_whenLoadView_seeExpectedElements() {
         MainPage()
             .givenPage()
-        
+
             .thenIShouldSee(element: .mainView)
     }
 }
