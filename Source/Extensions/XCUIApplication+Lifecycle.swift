@@ -24,9 +24,13 @@ import XCTest
 
 extension XCUIApplication {
     public func launchTestMode(customArguments: [String]? = nil) {
-        var args = [
+        let hiddenArgs = [
             "-FIRDebugDisabled"
         ]
+        let defaultArgs: [String] = UITestLaunchArgument.allCases.flatMap {
+            return ["-\($0.rawValue)", "1"]
+        }
+        var args = hiddenArgs + defaultArgs
         if let customArguments = customArguments {
             args.append(contentsOf: customArguments)
         }

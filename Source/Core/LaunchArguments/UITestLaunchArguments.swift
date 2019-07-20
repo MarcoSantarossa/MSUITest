@@ -20,35 +20,12 @@
 //    SOFTWARE.
 //
 
-import MSUITest
-import UIKit
+import Foundation
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+public enum UITestLaunchArgument: String, CaseIterable {
+    case animationsDisabled
 
-    var window: UIWindow?
-    private var mainCoordinator: Coordinator!
-
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        let window = UIWindow()
-        let rootVC = UINavigationController()
-        window.rootViewController = rootVC
-        window.makeKeyAndVisible()
-
-        self.window = window
-
-        mainCoordinator = MainCoordinator(rootViewController: rootVC)
-        mainCoordinator.start()
-
-        disableAnimationIfNeeded()
-
-        return true
-    }
-
-    private func disableAnimationIfNeeded() {
-        guard UITestLaunchArgument.animationsDisabled.isActive else { return }
-        UIView.setAnimationsEnabled(false)
+    public var isActive: Bool {
+        return UserDefaults.standard.object(forKey: self.rawValue) != nil
     }
 }

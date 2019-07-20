@@ -11,6 +11,7 @@
 		A90C84A222E31A4B00A759D0 /* XCUIElement+Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90C84A122E31A4B00A759D0 /* XCUIElement+Timeout.swift */; };
 		A90C84A522E31C5F00A759D0 /* PageObjectShould.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90C84A422E31C5F00A759D0 /* PageObjectShould.swift */; };
 		A90C84A822E31EFF00A759D0 /* HittableElementFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90C84A722E31EFF00A759D0 /* HittableElementFinder.swift */; };
+		A98B9A8B22E33843006B38BF /* UITestLaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B9A8A22E33843006B38BF /* UITestLaunchArguments.swift */; };
 		B0C7C81D22C22DDC00B6D1CA /* MSUITest.h in Headers */ = {isa = PBXBuildFile; fileRef = B0C7C81B22C22DDC00B6D1CA /* MSUITest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0C7C87222C22EDA00B6D1CA /* XCUIApplication+Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7C84A22C22EDA00B6D1CA /* XCUIApplication+Lifecycle.swift */; };
 		B0C7C87322C22EDA00B6D1CA /* XCUIElement+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7C84B22C22EDA00B6D1CA /* XCUIElement+TextField.swift */; };
@@ -26,6 +27,7 @@
 		A90C84A122E31A4B00A759D0 /* XCUIElement+Timeout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Timeout.swift"; sourceTree = "<group>"; };
 		A90C84A422E31C5F00A759D0 /* PageObjectShould.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObjectShould.swift; sourceTree = "<group>"; };
 		A90C84A722E31EFF00A759D0 /* HittableElementFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HittableElementFinder.swift; sourceTree = "<group>"; };
+		A98B9A8A22E33843006B38BF /* UITestLaunchArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestLaunchArguments.swift; sourceTree = "<group>"; };
 		B0C7C81822C22DDC00B6D1CA /* MSUITest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MSUITest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C7C81B22C22DDC00B6D1CA /* MSUITest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSUITest.h; sourceTree = "<group>"; };
 		B0C7C81C22C22DDC00B6D1CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				B0C7C8A422C2333700B6D1CA /* AIP */,
+				A98B9A8922E3381E006B38BF /* LaunchArguments */,
 				B0C7C87622C22F0900B6D1CA /* PageObjects */,
 			);
 			path = Core;
@@ -81,6 +84,14 @@
 				A90C84A722E31EFF00A759D0 /* HittableElementFinder.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A98B9A8922E3381E006B38BF /* LaunchArguments */ = {
+			isa = PBXGroup;
+			children = (
+				A98B9A8A22E33843006B38BF /* UITestLaunchArguments.swift */,
+			);
+			path = LaunchArguments;
 			sourceTree = "<group>";
 		};
 		B0C7C80E22C22DDC00B6D1CA = {
@@ -256,6 +267,7 @@
 				B0C7C87222C22EDA00B6D1CA /* XCUIApplication+Lifecycle.swift in Sources */,
 				B0C7C87422C22EDA00B6D1CA /* SwipeAction.swift in Sources */,
 				A90C84A022E319F800A759D0 /* PageObjectWhen.swift in Sources */,
+				A98B9A8B22E33843006B38BF /* UITestLaunchArguments.swift in Sources */,
 				A90C84A522E31C5F00A759D0 /* PageObjectShould.swift in Sources */,
 				B0C7C8A622C2333700B6D1CA /* AccessibilityIdentifierProvider.swift in Sources */,
 				B0C7C87B22C22F0900B6D1CA /* PageObjectUIElementProvider.swift in Sources */,
