@@ -81,8 +81,23 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onCellSelected(dataSource[indexPath.row])
+        let homeCell = dataSource[indexPath.row]
+        if homeCell == .alert {
+            showAlert()
+        } else {
+            onCellSelected(homeCell)
+        }
 
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+    private func showAlert() {
+        let alertController = UIAlertController(title: "🚨 Alert 🚨",
+                                                message: "[ Add here your test ]",
+                                                preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Close", style: .cancel)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true, completion: nil)
     }
 }

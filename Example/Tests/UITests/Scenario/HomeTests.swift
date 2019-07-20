@@ -127,4 +127,23 @@ class HomeTests: XCTestCase {
 
             .thenIShouldSee(element: .mainView)
     }
+
+    func test_whenTapAlertCell_seeAlert() {
+        HomePage()
+            .givenPage()
+
+            .whenTapCell(in: .tableView, at: 4)
+
+            .thenIShouldSeeAlert(title: "🚨 Alert 🚨", message: "[ Add here your test ]")
+    }
+
+    func test_whenTapAlertCellAndTapCancel_doNotSeeAlert() {
+        HomePage()
+            .givenPage()
+
+            .whenTapCell(in: .tableView, at: 4)
+            .whenTapAlertButton(at: 0)
+
+            .thenIShouldNotSeeAlert()
+    }
 }
