@@ -20,15 +20,12 @@
 //    SOFTWARE.
 //
 
-import MSUITest
+import Foundation
 
-final class MainAIP: AIP {
-    static var mainIdentifier: String = "main"
-}
+public enum UITestLaunchArgument: String, CaseIterable {
+    case animationsDisabled
 
-extension MainAIP {
-    enum Element: String {
-        case mainView
-        case label
+    public var isActive: Bool {
+        return UserDefaults.standard.object(forKey: self.rawValue) != nil
     }
 }

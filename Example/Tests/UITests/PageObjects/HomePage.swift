@@ -20,14 +20,36 @@
 //    SOFTWARE.
 //
 
+import MSUITest
 import XCTest
 
-class MainTests: XCTestCase {
+final class HomePage {
+    typealias Element = HomeAIP.Element
+}
 
-    func test_whenLoadView_seeExpectedElements() {
-        MainPage()
-            .givenPage()
+extension HomePage: PageObjectUIElementProvider, PageObject {
+    func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
+        let query = self.query(for: element, in: queryProvider)
 
-            .thenIShouldSee(element: .mainView)
+        let identifier = HomeAIP.elementIdentifier(for: element)
+        return query[identifier]
+    }
+
+    private func query(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElementQuery {
+        switch element {
+        case .mainView:
+            return queryProvider.otherElements
+        case .tableView:
+            return queryProvider.tables
+        }
+    }
+}
+
+// MARK: - Given
+extension HomePage {
+    func givenPage() -> HomePage {
+        XCUIApplication().launchTestMode()
+
+        return self
     }
 }
