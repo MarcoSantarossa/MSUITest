@@ -50,6 +50,8 @@ final class HomeCoordinator: Coordinator {
             return LabelCoordinator(navigationController: navigationController)
         case .button:
             return ButtonCoordinator(navigationController: navigationController)
+        case .textField:
+            return TextFieldCoordinator(navigationController: navigationController)
         default:
             fatalError()
         }

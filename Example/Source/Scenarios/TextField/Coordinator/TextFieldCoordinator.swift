@@ -22,37 +22,16 @@
 
 import UIKit
 
-final class UITestCoordinator: Coordinator {
+final class TextFieldCoordinator: Coordinator {
 
-    private var coords = [Coordinator]()
+    private unowned let navigationController: UINavigationController
 
-    private unowned let rootViewController: UINavigationController
-    private let coordinatorUnderUITest: String
-
-    init(rootViewController: UINavigationController, coordinatorUnderUITest: String) {
-        self.rootViewController = rootViewController
-        self.coordinatorUnderUITest = coordinatorUnderUITest
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 
     func start() {
-        let coordinator = createCoordinator()
-        coordinator.start()
-
-        coords.append(coordinator)
-    }
-
-    private func createCoordinator() -> Coordinator {
-        switch coordinatorUnderUITest {
-        case HomeCoordinator.identifier:
-            return HomeCoordinator(navigationController: rootViewController)
-        case LabelCoordinator.identifier:
-            return LabelCoordinator(navigationController: rootViewController)
-        case ButtonCoordinator.identifier:
-            return ButtonCoordinator(navigationController: rootViewController)
-        case TextFieldCoordinator.identifier:
-            return TextFieldCoordinator(navigationController: rootViewController)
-        default:
-            fatalError("Coordinator under UI tests not found")
-        }
+        let view = TextFieldViewController()
+        navigationController.pushViewController(view, animated: true)
     }
 }

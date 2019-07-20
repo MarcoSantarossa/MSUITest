@@ -22,37 +22,27 @@
 
 import UIKit
 
-final class UITestCoordinator: Coordinator {
+class TextFieldViewController: UIViewController {
 
-    private var coords = [Coordinator]()
+    @IBOutlet private var textField: UITextField!
 
-    private unowned let rootViewController: UINavigationController
-    private let coordinatorUnderUITest: String
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    init(rootViewController: UINavigationController, coordinatorUnderUITest: String) {
-        self.rootViewController = rootViewController
-        self.coordinatorUnderUITest = coordinatorUnderUITest
+        title = "TextField"
+
+        addAccessibility()
     }
 
-    func start() {
-        let coordinator = createCoordinator()
-        coordinator.start()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
 
-        coords.append(coordinator)
+        textField.resignFirstResponder()
     }
 
-    private func createCoordinator() -> Coordinator {
-        switch coordinatorUnderUITest {
-        case HomeCoordinator.identifier:
-            return HomeCoordinator(navigationController: rootViewController)
-        case LabelCoordinator.identifier:
-            return LabelCoordinator(navigationController: rootViewController)
-        case ButtonCoordinator.identifier:
-            return ButtonCoordinator(navigationController: rootViewController)
-        case TextFieldCoordinator.identifier:
-            return TextFieldCoordinator(navigationController: rootViewController)
-        default:
-            fatalError("Coordinator under UI tests not found")
-        }
+    private func addAccessibility() {
+        let aip = TextFieldAIP.self
+        view.addAccessibility(aip: aip, element: .mainView)
+        textField.addAccessibility(aip: aip, element: .textField)
     }
 }

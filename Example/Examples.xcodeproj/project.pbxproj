@@ -35,6 +35,13 @@
 		A9C8EF1722E34A3E00262A51 /* ButtonAIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8EF1222E34A3600262A51 /* ButtonAIP.swift */; };
 		A9C8EF1922E34C1B00262A51 /* ButtonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8EF1822E34C1B00262A51 /* ButtonPage.swift */; };
 		A9C8EF1B22E34C7A00262A51 /* ButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8EF1A22E34C7A00262A51 /* ButtonTests.swift */; };
+		A9C8EF2422E3500D00262A51 /* TextFieldCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8EF1E22E3500D00262A51 /* TextFieldCoordinator.swift */; };
+		A9C8EF2522E3500D00262A51 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8EF2022E3500D00262A51 /* TextFieldViewController.swift */; };
+		A9C8EF2622E3500D00262A51 /* TextFieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C8EF2122E3500D00262A51 /* TextFieldViewController.xib */; };
+		A9C8EF2722E3500D00262A51 /* TextFieldAIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8EF2322E3500D00262A51 /* TextFieldAIP.swift */; };
+		A9C8EF2822E3514B00262A51 /* TextFieldAIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8EF2322E3500D00262A51 /* TextFieldAIP.swift */; };
+		A9C8EF2A22E3515B00262A51 /* TextFieldPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8EF2922E3515B00262A51 /* TextFieldPage.swift */; };
+		A9C8EF2C22E3518300262A51 /* TextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8EF2B22E3518300262A51 /* TextFieldTests.swift */; };
 		B0C7C88922C231DC00B6D1CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7C88822C231DC00B6D1CA /* AppDelegate.swift */; };
 		B0C7C89022C231DD00B6D1CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C7C88F22C231DD00B6D1CA /* Assets.xcassets */; };
 		B0C7C89322C231DD00B6D1CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C7C89122C231DD00B6D1CA /* LaunchScreen.storyboard */; };
@@ -88,6 +95,12 @@
 		A9C8EF1222E34A3600262A51 /* ButtonAIP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonAIP.swift; sourceTree = "<group>"; };
 		A9C8EF1822E34C1B00262A51 /* ButtonPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPage.swift; sourceTree = "<group>"; };
 		A9C8EF1A22E34C7A00262A51 /* ButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTests.swift; sourceTree = "<group>"; };
+		A9C8EF1E22E3500D00262A51 /* TextFieldCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCoordinator.swift; sourceTree = "<group>"; };
+		A9C8EF2022E3500D00262A51 /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
+		A9C8EF2122E3500D00262A51 /* TextFieldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldViewController.xib; sourceTree = "<group>"; };
+		A9C8EF2322E3500D00262A51 /* TextFieldAIP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldAIP.swift; sourceTree = "<group>"; };
+		A9C8EF2922E3515B00262A51 /* TextFieldPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPage.swift; sourceTree = "<group>"; };
+		A9C8EF2B22E3518300262A51 /* TextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTests.swift; sourceTree = "<group>"; };
 		B0C7C88522C231DC00B6D1CA /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C7C88822C231DC00B6D1CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0C7C88F22C231DD00B6D1CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -308,6 +321,42 @@
 			path = AIP;
 			sourceTree = "<group>";
 		};
+		A9C8EF1C22E3500D00262A51 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				A9C8EF2222E3500D00262A51 /* AIP */,
+				A9C8EF1D22E3500D00262A51 /* Coordinator */,
+				A9C8EF1F22E3500D00262A51 /* View */,
+			);
+			name = TextField;
+			path = Scenarios/TextField;
+			sourceTree = "<group>";
+		};
+		A9C8EF1D22E3500D00262A51 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A9C8EF1E22E3500D00262A51 /* TextFieldCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A9C8EF1F22E3500D00262A51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9C8EF2022E3500D00262A51 /* TextFieldViewController.swift */,
+				A9C8EF2122E3500D00262A51 /* TextFieldViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9C8EF2222E3500D00262A51 /* AIP */ = {
+			isa = PBXGroup;
+			children = (
+				A9C8EF2322E3500D00262A51 /* TextFieldAIP.swift */,
+			);
+			path = AIP;
+			sourceTree = "<group>";
+		};
 		B0C7C87C22C231DC00B6D1CA = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +383,7 @@
 				A9A93EA222E32ACE0057818E /* Main */,
 				A9A93EA722E32B0C0057818E /* Resources */,
 				A9A93EA322E32ADC0057818E /* Scenarios */,
+				A9C8EF1C22E3500D00262A51 /* TextField */,
 				A9A93EA622E32B000057818E /* SupportingFiles */,
 			);
 			path = Source;
@@ -363,6 +413,7 @@
 				A9C8EF1822E34C1B00262A51 /* ButtonPage.swift */,
 				A9A93EBC22E332C00057818E /* HomePage.swift */,
 				A98B9A9F22E342E6006B38BF /* LabelPage.swift */,
+				A9C8EF2922E3515B00262A51 /* TextFieldPage.swift */,
 			);
 			path = PageObjects;
 			sourceTree = "<group>";
@@ -373,6 +424,7 @@
 				A9C8EF1A22E34C7A00262A51 /* ButtonTests.swift */,
 				A9A93EBF22E333400057818E /* HomeTests.swift */,
 				A98B9AA122E3433E006B38BF /* LabelTests.swift */,
+				A9C8EF2B22E3518300262A51 /* TextFieldTests.swift */,
 			);
 			path = Scenario;
 			sourceTree = "<group>";
@@ -463,6 +515,7 @@
 			files = (
 				B0C7C89322C231DD00B6D1CA /* LaunchScreen.storyboard in Resources */,
 				A9C8EF1422E34A3600262A51 /* ButtonViewController.xib in Resources */,
+				A9C8EF2622E3500D00262A51 /* TextFieldViewController.xib in Resources */,
 				B0C7C89022C231DD00B6D1CA /* Assets.xcassets in Resources */,
 				A9A93EBA22E32F750057818E /* HomeViewController.xib in Resources */,
 				A98B9A9922E3417D006B38BF /* LabelViewController.xib in Resources */,
@@ -522,18 +575,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C8EF2522E3500D00262A51 /* TextFieldViewController.swift in Sources */,
 				A9A93E9F22E32A710057818E /* Coordinator.swift in Sources */,
 				A9A93EB922E32F750057818E /* HomeViewController.swift in Sources */,
 				A9A93EAC22E32B680057818E /* MainCoordinator.swift in Sources */,
 				A98B9A8E22E33BB1006B38BF /* UITestCoordinator.swift in Sources */,
 				B0C7C88922C231DC00B6D1CA /* AppDelegate.swift in Sources */,
 				A98B9A9B22E34210006B38BF /* LabelAIP.swift in Sources */,
+				A9C8EF2722E3500D00262A51 /* TextFieldAIP.swift in Sources */,
 				A9C8EF1322E34A3600262A51 /* ButtonCoordinator.swift in Sources */,
 				A98B9A9822E3417D006B38BF /* LabelViewController.swift in Sources */,
 				A98B9A9122E33D4A006B38BF /* Identifiable.swift in Sources */,
 				A98B9A9E22E3427A006B38BF /* LabelCoordinator.swift in Sources */,
 				A9A93EB222E32E430057818E /* HomeCoordinator.swift in Sources */,
 				A9C8EF1522E34A3600262A51 /* ButtonViewController.swift in Sources */,
+				A9C8EF2422E3500D00262A51 /* TextFieldCoordinator.swift in Sources */,
 				A9C8EF1622E34A3600262A51 /* ButtonAIP.swift in Sources */,
 				A9A93EB522E32F000057818E /* HomeAIP.swift in Sources */,
 			);
@@ -543,15 +599,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C8EF2A22E3515B00262A51 /* TextFieldPage.swift in Sources */,
 				A9A93EBE22E332C20057818E /* HomePage.swift in Sources */,
 				A9A93EC022E333400057818E /* HomeTests.swift in Sources */,
 				A98B9AA222E3433F006B38BF /* LabelTests.swift in Sources */,
 				A9A93EB622E32F040057818E /* HomeAIP.swift in Sources */,
+				A9C8EF2822E3514B00262A51 /* TextFieldAIP.swift in Sources */,
 				A9C8EF1922E34C1B00262A51 /* ButtonPage.swift in Sources */,
 				A98B9A9C22E34210006B38BF /* LabelAIP.swift in Sources */,
 				A9C8EF1B22E34C7A00262A51 /* ButtonTests.swift in Sources */,
 				A9C8EF1722E34A3E00262A51 /* ButtonAIP.swift in Sources */,
 				A98B9AA022E342E6006B38BF /* LabelPage.swift in Sources */,
+				A9C8EF2C22E3518300262A51 /* TextFieldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,15 +23,15 @@
 import MSUITest
 import XCTest
 
-final class HomePage {
-    typealias Element = HomeAIP.Element
+final class TextFieldPage {
+    typealias Element = TextFieldAIP.Element
 }
 
-extension HomePage: PageObjectUIElementProvider, PageObject {
+extension TextFieldPage: PageObjectUIElementProvider, PageObject {
     func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
         let query = self.query(for: element, in: queryProvider)
 
-        let identifier = HomeAIP.elementIdentifier(for: element)
+        let identifier = TextFieldAIP.elementIdentifier(for: element)
         return query[identifier]
     }
 
@@ -39,58 +39,18 @@ extension HomePage: PageObjectUIElementProvider, PageObject {
         switch element {
         case .mainView:
             return queryProvider.otherElements
-        case .tableView:
-            return queryProvider.tables
+        case .textField:
+            return queryProvider.textFields
         }
     }
 }
 
 // MARK: - Given
-extension HomePage {
-    func givenPage() -> HomePage {
+extension TextFieldPage {
+    func givenPage() -> TextFieldPage {
         XCUIApplication().launchTestMode(customArguments: [
-            "-coordinatorUnderUITest", "HomeCoordinator"
+            "-coordinatorUnderUITest", "TextFieldCoordinator"
             ])
-
-        return self
-    }
-}
-
-// MARK: - When
-extension HomePage {
-    func whenFocusTextField() -> HomePage {
-        TextFieldPage()
-            .whenTap(element: .textField)
-
-        return self
-    }
-}
-
-// MARK: - Should
-extension HomePage {
-    @discardableResult
-    func shouldSeeLabelPage() -> HomePage {
-
-        LabelPage()
-            .thenIShouldSee(element: .mainView)
-
-        return self
-    }
-
-    @discardableResult
-    func shouldSeeButtonPage() -> HomePage {
-
-        ButtonPage()
-            .thenIShouldSee(element: .mainView)
-
-        return self
-    }
-
-    @discardableResult
-    func shouldSeeTextFieldPage() -> HomePage {
-
-        TextFieldPage()
-            .thenIShouldSee(element: .mainView)
 
         return self
     }
