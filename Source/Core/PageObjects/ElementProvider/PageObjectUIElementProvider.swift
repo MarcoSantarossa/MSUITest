@@ -22,8 +22,37 @@
 
 import XCTest
 
+/** Abstract object to provide a XCUIElement given a specific AIP element.
+
+ Example:
+ ````
+ extension HomePage: PageObjectUIElementProvider, PageObject {
+     func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
+         let query = self.query(for: element, in: queryProvider)
+
+         let identifier = HomeAIP.elementIdentifier(for: element)
+         return query[identifier]
+     }
+
+     private func query(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElementQuery {
+         switch element {
+         case .mainView:
+         return queryProvider.otherElements
+         case .tableView:
+         return queryProvider.tables
+     }
+ }
+
+ ````
+ */
 public protocol PageObjectUIElementProvider: AnyObject {
     associatedtype Element
 
+    /// Method to provide a XCUIElement given a specific AIP element.
+    ///
+    /// - Parameters:
+    ///   - element: AIP element to convert.
+    ///   - queryProvider: Provider where to find the XCUIElement element. Default: XCUIApplication().
+    /// - Returns: the XCUIElement found.
     func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement
 }
