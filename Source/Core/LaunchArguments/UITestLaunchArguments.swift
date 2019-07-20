@@ -22,9 +22,20 @@
 
 import Foundation
 
+/// List of internal launch arguments used from MSUITest and available for the client.
 public enum UITestLaunchArgument: String, CaseIterable {
+    /// Request to disable the animation. Animations can create flicky tests.
     case animationsDisabled
 
+    /**
+     Checks if a launch argument has been set from MSUITest.
+
+     Example:
+     ````
+     guard UITestLaunchArgument.animationsDisabled.isActive else { return }
+     UIView.setAnimationsEnabled(false)
+     ````
+     */
     public var isActive: Bool {
         return UserDefaults.standard.object(forKey: self.rawValue) != nil
     }
