@@ -22,9 +22,15 @@
 
 import XCTest
 
+/// Paylod object to perform a swipe action.
 public struct SwipeAction {
+    /// Where to perform the swipe.
     let target: XCUIElement
+
+    /// The direction of the swipe.
     let direction: Direction
+
+    /// Limit of swipes before stopping.
     let maxSwipes: Int
 }
 
