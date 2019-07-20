@@ -154,7 +154,7 @@ extension PageObjectShould where Self: PageObjectUIElementProvider {
 
     @discardableResult
     public func thenIShouldSeeNavigationBar(text: String, timeout: TimeInterval? = nil) -> Self {
-        let uiElement = XCUIApplication().navigationBars.staticTexts[text]
+        let uiElement = XCUIApplication().navigationBars.otherElements[text]
         uiElement.waitIfNeeded(timeout: timeout)
 
         XCTAssertTrue(uiElement.exists, "\(#function) expected text \(text)")

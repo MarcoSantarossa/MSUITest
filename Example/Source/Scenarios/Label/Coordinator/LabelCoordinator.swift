@@ -20,50 +20,18 @@
 //    SOFTWARE.
 //
 
-import MSUITest
-import XCTest
+import UIKit
 
-final class HomePage {
-    typealias Element = HomeAIP.Element
-}
+final class LabelCoordinator: Coordinator {
 
-extension HomePage: PageObjectUIElementProvider, PageObject {
-    func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
-        let query = self.query(for: element, in: queryProvider)
+    private unowned let navigationController: UINavigationController
 
-        let identifier = HomeAIP.elementIdentifier(for: element)
-        return query[identifier]
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 
-    private func query(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElementQuery {
-        switch element {
-        case .mainView:
-            return queryProvider.otherElements
-        case .tableView:
-            return queryProvider.tables
-        }
-    }
-}
-
-// MARK: - Given
-extension HomePage {
-    func givenPage() -> HomePage {
-        XCUIApplication().launchTestMode(customArguments: [
-            "-coordinatorUnderUITest", "HomeCoordinator"
-            ])
-
-        return self
-    }
-}
-
-// MARK: - Should
-extension HomePage {
-    @discardableResult
-    func shouldSeeLabelPage() -> HomePage {
-
-        LabelPage()
-            .thenIShouldSee(element: .mainView)
-
-        return self
+    func start() {
+        let view = LabelViewController()
+        navigationController.pushViewController(view, animated: true)
     }
 }

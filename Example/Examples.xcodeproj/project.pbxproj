@@ -12,6 +12,13 @@
 		A90C849D22E3162100A759D0 /* MSUITest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90C849822E3130800A759D0 /* MSUITest.framework */; };
 		A98B9A8E22E33BB1006B38BF /* UITestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B9A8D22E33BB1006B38BF /* UITestCoordinator.swift */; };
 		A98B9A9122E33D4A006B38BF /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B9A9022E33D4A006B38BF /* Identifiable.swift */; };
+		A98B9A9822E3417D006B38BF /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B9A9622E3417D006B38BF /* LabelViewController.swift */; };
+		A98B9A9922E3417D006B38BF /* LabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98B9A9722E3417D006B38BF /* LabelViewController.xib */; };
+		A98B9A9B22E34210006B38BF /* LabelAIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B9A9A22E34210006B38BF /* LabelAIP.swift */; };
+		A98B9A9C22E34210006B38BF /* LabelAIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B9A9A22E34210006B38BF /* LabelAIP.swift */; };
+		A98B9A9E22E3427A006B38BF /* LabelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B9A9D22E3427A006B38BF /* LabelCoordinator.swift */; };
+		A98B9AA022E342E6006B38BF /* LabelPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B9A9F22E342E6006B38BF /* LabelPage.swift */; };
+		A98B9AA222E3433F006B38BF /* LabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B9AA122E3433E006B38BF /* LabelTests.swift */; };
 		A9A93E9F22E32A710057818E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A93E9E22E32A710057818E /* Coordinator.swift */; };
 		A9A93EAC22E32B680057818E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A93EAB22E32B680057818E /* MainCoordinator.swift */; };
 		A9A93EB222E32E430057818E /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A93EB122E32E430057818E /* HomeCoordinator.swift */; };
@@ -54,6 +61,12 @@
 		A90C849822E3130800A759D0 /* MSUITest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MSUITest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98B9A8D22E33BB1006B38BF /* UITestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCoordinator.swift; sourceTree = "<group>"; };
 		A98B9A9022E33D4A006B38BF /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		A98B9A9622E3417D006B38BF /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
+		A98B9A9722E3417D006B38BF /* LabelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelViewController.xib; sourceTree = "<group>"; };
+		A98B9A9A22E34210006B38BF /* LabelAIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAIP.swift; sourceTree = "<group>"; };
+		A98B9A9D22E3427A006B38BF /* LabelCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCoordinator.swift; sourceTree = "<group>"; };
+		A98B9A9F22E342E6006B38BF /* LabelPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPage.swift; sourceTree = "<group>"; };
+		A98B9AA122E3433E006B38BF /* LabelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTests.swift; sourceTree = "<group>"; };
 		A9A93E9E22E32A710057818E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A9A93EAB22E32B680057818E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A9A93EB122E32E430057818E /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
@@ -99,6 +112,41 @@
 			path = Identifiable;
 			sourceTree = "<group>";
 		};
+		A98B9A9222E34145006B38BF /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				A98B9A9422E34154006B38BF /* AIP */,
+				A98B9A9322E34151006B38BF /* Coordinator */,
+				A98B9A9522E34156006B38BF /* View */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		A98B9A9322E34151006B38BF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A98B9A9D22E3427A006B38BF /* LabelCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A98B9A9422E34154006B38BF /* AIP */ = {
+			isa = PBXGroup;
+			children = (
+				A98B9A9A22E34210006B38BF /* LabelAIP.swift */,
+			);
+			path = AIP;
+			sourceTree = "<group>";
+		};
+		A98B9A9522E34156006B38BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A98B9A9622E3417D006B38BF /* LabelViewController.swift */,
+				A98B9A9722E3417D006B38BF /* LabelViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A9A93E9C22E32A4F0057818E /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +176,7 @@
 		A9A93EA322E32ADC0057818E /* Scenarios */ = {
 			isa = PBXGroup;
 			children = (
+				A98B9A9222E34145006B38BF /* Label */,
 				A9A93EAD22E32E090057818E /* Home */,
 				A9A93EA422E32ADE0057818E /* LaunchScreen */,
 			);
@@ -263,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				A9A93EBC22E332C00057818E /* HomePage.swift */,
+				A98B9A9F22E342E6006B38BF /* LabelPage.swift */,
 			);
 			path = PageObjects;
 			sourceTree = "<group>";
@@ -271,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				A9A93EBF22E333400057818E /* HomeTests.swift */,
+				A98B9AA122E3433E006B38BF /* LabelTests.swift */,
 			);
 			path = Scenario;
 			sourceTree = "<group>";
@@ -362,6 +413,7 @@
 				B0C7C89322C231DD00B6D1CA /* LaunchScreen.storyboard in Resources */,
 				B0C7C89022C231DD00B6D1CA /* Assets.xcassets in Resources */,
 				A9A93EBA22E32F750057818E /* HomeViewController.xib in Resources */,
+				A98B9A9922E3417D006B38BF /* LabelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +475,10 @@
 				A9A93EAC22E32B680057818E /* MainCoordinator.swift in Sources */,
 				A98B9A8E22E33BB1006B38BF /* UITestCoordinator.swift in Sources */,
 				B0C7C88922C231DC00B6D1CA /* AppDelegate.swift in Sources */,
+				A98B9A9B22E34210006B38BF /* LabelAIP.swift in Sources */,
+				A98B9A9822E3417D006B38BF /* LabelViewController.swift in Sources */,
 				A98B9A9122E33D4A006B38BF /* Identifiable.swift in Sources */,
+				A98B9A9E22E3427A006B38BF /* LabelCoordinator.swift in Sources */,
 				A9A93EB222E32E430057818E /* HomeCoordinator.swift in Sources */,
 				A9A93EB522E32F000057818E /* HomeAIP.swift in Sources */,
 			);
@@ -435,7 +490,10 @@
 			files = (
 				A9A93EBE22E332C20057818E /* HomePage.swift in Sources */,
 				A9A93EC022E333400057818E /* HomeTests.swift in Sources */,
+				A98B9AA222E3433F006B38BF /* LabelTests.swift in Sources */,
 				A9A93EB622E32F040057818E /* HomeAIP.swift in Sources */,
+				A98B9A9C22E34210006B38BF /* LabelAIP.swift in Sources */,
+				A98B9AA022E342E6006B38BF /* LabelPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

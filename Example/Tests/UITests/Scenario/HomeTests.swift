@@ -29,11 +29,21 @@ class HomeTests: XCTestCase {
             .givenPage()
 
             .thenIShouldSee(element: .mainView, timeout: 0.3)
+            .thenIShouldSeeNavigationBar(text: "Home")
             .thenIShouldSee(element: .tableView)
             .thenIShouldSee(in: .tableView, at: 0, text: "label")
             .thenIShouldSee(in: .tableView, at: 1, text: "button")
             .thenIShouldSee(in: .tableView, at: 2, text: "textField")
             .thenIShouldSee(in: .tableView, at: 3, text: "image")
             .thenIShouldSee(in: .tableView, at: 4, text: "alert")
+    }
+
+    func test_whenTapLabelCell_seeLabelView() {
+        HomePage()
+            .givenPage()
+
+            .whenTapCell(in: .tableView, at: 0)
+
+            .shouldSeeLabelPage()
     }
 }

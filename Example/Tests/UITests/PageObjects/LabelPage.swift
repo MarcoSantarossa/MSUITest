@@ -23,15 +23,15 @@
 import MSUITest
 import XCTest
 
-final class HomePage {
-    typealias Element = HomeAIP.Element
+final class LabelPage {
+    typealias Element = LabelAIP.Element
 }
 
-extension HomePage: PageObjectUIElementProvider, PageObject {
+extension LabelPage: PageObjectUIElementProvider, PageObject {
     func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
         let query = self.query(for: element, in: queryProvider)
 
-        let identifier = HomeAIP.elementIdentifier(for: element)
+        let identifier = LabelAIP.elementIdentifier(for: element)
         return query[identifier]
     }
 
@@ -39,30 +39,18 @@ extension HomePage: PageObjectUIElementProvider, PageObject {
         switch element {
         case .mainView:
             return queryProvider.otherElements
-        case .tableView:
-            return queryProvider.tables
+        case .label:
+            return queryProvider.staticTexts
         }
     }
 }
 
 // MARK: - Given
-extension HomePage {
-    func givenPage() -> HomePage {
+extension LabelPage {
+    func givenPage() -> LabelPage {
         XCUIApplication().launchTestMode(customArguments: [
-            "-coordinatorUnderUITest", "HomeCoordinator"
+            "-coordinatorUnderUITest", "LabelCoordinator"
             ])
-
-        return self
-    }
-}
-
-// MARK: - Should
-extension HomePage {
-    @discardableResult
-    func shouldSeeLabelPage() -> HomePage {
-
-        LabelPage()
-            .thenIShouldSee(element: .mainView)
 
         return self
     }
