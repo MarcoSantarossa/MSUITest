@@ -22,13 +22,38 @@
 
 import Foundation
 
+/// Type alias of AccessibilityIdentifierProvider to use as shorter name alternative.
 public typealias AIP = AccessibilityIdentifierProvider
 
+/**
+ This object handles the identifer of the UI elements to test.
+
+
+ Example:
+ ````
+ final class HomeAIP: AIP {
+    static var mainIdentifier: String = "home"
+ }
+
+ extension HomeAIP {
+     enum Element: String {
+         case mainView
+         case tableView
+     }
+ }
+
+ ````
+ */
 public protocol AccessibilityIdentifierProvider: AnyObject {
     associatedtype Element
 
+    /// The name of a specific container of UI elements. It could be a good idea using the name of the view of the UI elements like "home".
     static var mainIdentifier: String { get }
 
+    /// Helper method to provide the complete identifier of an UI element. You don't need to implement it. An internal extension provides the expected behaviour.
+    ///
+    /// - Parameter element: UI Element which needs an identifier.
+    /// - Returns: The complete identifier of the UI element.
     static func elementIdentifier(for element: Element) -> String
 }
 
