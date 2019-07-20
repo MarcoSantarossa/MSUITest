@@ -22,36 +22,25 @@
 
 import UIKit
 
-final class HomeCoordinator: Coordinator {
+class ButtonViewController: UIViewController {
 
-    private unowned let navigationController: UINavigationController
+    @IBOutlet private var button: UIButton!
 
-    private var coords = [String: Coordinator]()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+        title = "Button"
+
+        addAccessibility()
     }
 
-    func start() {
-        let onCellSeleted: (HomeCell) -> Void = { [weak self] in
-            guard let self = self else { return }
-            let coordinator = self.makeCoordinator(for: $0)
-            coordinator.start()
-            self.coords[type(of: coordinator).identifier] = coordinator
-        }
-
-        let view = HomeViewController(onCellSelected: onCellSeleted)
-        navigationController.setViewControllers([view], animated: false)
+    private func addAccessibility() {
+        let aip = ButtonAIP.self
+        view.addAccessibility(aip: aip, element: .mainView)
+        button.addAccessibility(aip: aip, element: .button)
     }
 
-    private func makeCoordinator(for cell: HomeCell) -> Coordinator {
-        switch cell {
-        case .label:
-            return LabelCoordinator(navigationController: navigationController)
-        case .button:
-            return ButtonCoordinator(navigationController: navigationController)
-        default:
-            fatalError()
-        }
+    @IBAction private func onTap(_ sender: Any) {
+        print("let's add something when I'm in easter egg mood 🤫")
     }
 }

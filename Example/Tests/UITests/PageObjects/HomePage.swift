@@ -66,4 +66,13 @@ extension HomePage {
 
         return self
     }
+
+    @discardableResult
+    func shouldSeeButtonPage() -> HomePage {
+
+        ButtonPage()
+            .thenIShouldSee(element: .mainView)
+
+        return self
+    }
 }

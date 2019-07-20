@@ -46,4 +46,33 @@ class HomeTests: XCTestCase {
 
             .shouldSeeLabelPage()
     }
+
+    func test_whenTapLabelCellAndBackButton_seeMainView() {
+        HomePage()
+            .givenPage()
+
+            .whenTapCell(in: .tableView, at: 0)
+            .whenTapBackButton()
+
+            .thenIShouldSee(element: .mainView)
+    }
+
+    func test_whenTapButtonCell_seeButtonView() {
+        HomePage()
+            .givenPage()
+
+            .whenTapCell(in: .tableView, at: 1)
+
+            .shouldSeeButtonPage()
+    }
+
+    func test_whenTapButtonCellAndBackButton_seeMainView() {
+        HomePage()
+            .givenPage()
+
+            .whenTapCell(in: .tableView, at: 1)
+            .whenTapBackButton()
+
+            .thenIShouldSee(element: .mainView)
+    }
 }

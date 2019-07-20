@@ -47,6 +47,8 @@ final class UITestCoordinator: Coordinator {
             return HomeCoordinator(navigationController: rootViewController)
         case LabelCoordinator.identifier:
             return LabelCoordinator(navigationController: rootViewController)
+        case ButtonCoordinator.identifier:
+            return ButtonCoordinator(navigationController: rootViewController)
         default:
             fatalError("Coordinator under UI tests not found")
         }
