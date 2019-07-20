@@ -39,12 +39,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window = window
 
-        mainCoordinator = MainCoordinator(rootViewController: rootVC)
+        mainCoordinator = createMainCoordinator(with: rootVC)
         mainCoordinator.start()
 
         disableAnimationIfNeeded()
 
         return true
+    }
+
+    private func createMainCoordinator(with rootViewController: UINavigationController) -> Coordinator {
+        if let coordinatorUnderUITest = UserDefaults.standard.string(forKey: "coordinatorUnderUITest") {
+            return UITestCoordinator(rootViewController: rootViewController, coordinatorUnderUITest: coordinatorUnderUITest)
+        } else {
+            return MainCoordinator(rootViewController: rootViewController)
+        }
     }
 
     private func disableAnimationIfNeeded() {

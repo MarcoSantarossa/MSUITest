@@ -10,6 +10,8 @@
 		A90C849922E3130800A759D0 /* MSUITest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90C849822E3130800A759D0 /* MSUITest.framework */; };
 		A90C849A22E3130800A759D0 /* MSUITest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A90C849822E3130800A759D0 /* MSUITest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A90C849D22E3162100A759D0 /* MSUITest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90C849822E3130800A759D0 /* MSUITest.framework */; };
+		A98B9A8E22E33BB1006B38BF /* UITestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B9A8D22E33BB1006B38BF /* UITestCoordinator.swift */; };
+		A98B9A9122E33D4A006B38BF /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B9A9022E33D4A006B38BF /* Identifiable.swift */; };
 		A9A93E9F22E32A710057818E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A93E9E22E32A710057818E /* Coordinator.swift */; };
 		A9A93EAC22E32B680057818E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A93EAB22E32B680057818E /* MainCoordinator.swift */; };
 		A9A93EB222E32E430057818E /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A93EB122E32E430057818E /* HomeCoordinator.swift */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		A90C849822E3130800A759D0 /* MSUITest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MSUITest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98B9A8D22E33BB1006B38BF /* UITestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCoordinator.swift; sourceTree = "<group>"; };
+		A98B9A9022E33D4A006B38BF /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		A9A93E9E22E32A710057818E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A9A93EAB22E32B680057818E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A9A93EB122E32E430057818E /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
@@ -87,9 +91,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A98B9A8F22E33D34006B38BF /* Identifiable */ = {
+			isa = PBXGroup;
+			children = (
+				A98B9A9022E33D4A006B38BF /* Identifiable.swift */,
+			);
+			path = Identifiable;
+			sourceTree = "<group>";
+		};
 		A9A93E9C22E32A4F0057818E /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				A98B9A8F22E33D34006B38BF /* Identifiable */,
 				A9A93E9D22E32A670057818E /* Routing */,
 			);
 			path = Infrastructure;
@@ -157,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				A9A93EAB22E32B680057818E /* MainCoordinator.swift */,
+				A98B9A8D22E33BB1006B38BF /* UITestCoordinator.swift */,
 			);
 			path = MainCoordinator;
 			sourceTree = "<group>";
@@ -407,7 +421,9 @@
 				A9A93E9F22E32A710057818E /* Coordinator.swift in Sources */,
 				A9A93EB922E32F750057818E /* HomeViewController.swift in Sources */,
 				A9A93EAC22E32B680057818E /* MainCoordinator.swift in Sources */,
+				A98B9A8E22E33BB1006B38BF /* UITestCoordinator.swift in Sources */,
 				B0C7C88922C231DC00B6D1CA /* AppDelegate.swift in Sources */,
+				A98B9A9122E33D4A006B38BF /* Identifiable.swift in Sources */,
 				A9A93EB222E32E430057818E /* HomeCoordinator.swift in Sources */,
 				A9A93EB522E32F000057818E /* HomeAIP.swift in Sources */,
 			);
