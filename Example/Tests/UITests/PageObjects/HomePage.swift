@@ -48,7 +48,9 @@ extension HomePage: PageObjectUIElementProvider, PageObject {
 // MARK: - Given
 extension HomePage {
     func givenPage() -> HomePage {
-        XCUIApplication().launchTestMode()
+        XCUIApplication().launchTestMode(customArguments: [
+            "-coordinatorUnderUITest", "HomeCoordinator"
+        ])
 
         return self
     }

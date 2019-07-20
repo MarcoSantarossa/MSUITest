@@ -20,12 +20,33 @@
 //    SOFTWARE.
 //
 
-protocol Coordinator: AnyObject, Identifiable {
-    func start()
-}
+import UIKit
 
-extension Coordinator {
-    static var identifier: String {
-        return String(describing: self)
+final class UITestCoordinator: Coordinator {
+
+    private var coords = [Coordinator]()
+
+    private unowned let rootViewController: UINavigationController
+    private let coordinatorUnderUITest: String
+
+    init(rootViewController: UINavigationController, coordinatorUnderUITest: String) {
+        self.rootViewController = rootViewController
+        self.coordinatorUnderUITest = coordinatorUnderUITest
+    }
+
+    func start() {
+        let coordinator = createCoordinator()
+        coordinator.start()
+
+        coords.append(coordinator)
+    }
+
+    private func createCoordinator() -> Coordinator {
+        switch coordinatorUnderUITest {
+        case HomeCoordinator.identifier:
+            return HomeCoordinator(navigationController: rootViewController)
+        default:
+            fatalError("Coordinator under UI tests not found")
+        }
     }
 }
