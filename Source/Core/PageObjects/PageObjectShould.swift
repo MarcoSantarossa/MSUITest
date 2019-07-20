@@ -43,6 +43,8 @@ public protocol PageObjectShould: AnyObject {
     func thenIShouldNotSeeKeyboard() -> Self
     @discardableResult
     func thenIShouldSeeAlert(title: String, message: String, timeout: TimeInterval?) -> Self
+    @discardableResult
+    func thenIShouldNotSeeAlert() -> Self
 }
 
 extension PageObjectShould where Self: PageObjectUIElementProvider {
@@ -183,6 +185,13 @@ extension PageObjectShould where Self: PageObjectUIElementProvider {
         assertExistence(of: uiElement, failureMessage: "Alert not found with message \(message)", timeout: timeout)
 
         XCTAssertEqual(XCUIApplication().alerts.element.label, title)
+
+        return self
+    }
+
+    @discardableResult
+    public func thenIShouldNotSeeAlert() -> Self {
+        XCTAssertEqual(XCUIApplication().alerts.count, 0)
 
         return self
     }
