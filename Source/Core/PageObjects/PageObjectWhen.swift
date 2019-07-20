@@ -22,29 +22,107 @@
 
 import XCTest
 
+/// Abstract Page object to provide the default functionality for a concrete Page object.
+/// * Attention: **None** of these methods require a custom implementation. Everything is provided with internal extensions.
 public protocol PageObjectWhen: AnyObject {
     associatedtype Element
 
+    /// Performs a tap in a element.
+    ///
+    /// - Parameters:
+    ///   - element: Element to tap.
+    ///   - coordinates: _Optional_ coordinates to perform the tap inside the element.
+    ///   - timeout: _Optional_ timeout to wait the visibility of the element.
+    ///   - swipeAction: _Optional_ swipe action to find a not visible cell.
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func whenTap(element: Element, coordinates: CGPoint?, timeout: TimeInterval?, swipeAction: SwipeAction?) -> Self
+
+    /// Performs a tap inside a cell.
+    ///
+    /// - Parameters:
+    ///   - tableView: Table view where to find the cell.
+    ///   - index: Index of the cell to tap
+    ///   - timeout: _Optional_ timeout to wait the visibility of the element.
+    ///   - swipeAction: _Optional_ swipe action to find a not visible cell.
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
-    func whenTapCell(in parentElement: Element, at index: Int, timeout: TimeInterval?, swipeAction: SwipeAction?) -> Self
+    func whenTapCell(in tableView: Element, at index: Int, timeout: TimeInterval?, swipeAction: SwipeAction?) -> Self
+
+    /// Performs a tap in the screen to a specific coordinate.
+    ///
+    /// - Parameter coordinates: Location to tap.
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func whenTap(coordinates: CGPoint) -> Self
+
+    /// Performs a tap in the back button of a navigation controller.
+    ///
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func whenTapBackButton() -> Self
+
+    /// Performs a tap in an alert view button.
+    ///
+    /// - Parameters:
+    ///   - index: Index of the button to tap.
+    ///   - timeout: _Optional_ timeout to wait the visibility of the element.
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func whenTapAlertButton(at index: Int, timeout: TimeInterval?) -> Self
+
+    /// Performs a tap in an action sheet button.
+    ///
+    /// - Parameters:
+    ///   - index: Index of the button to tap.
+    ///   - timeout: _Optional_ timeout to wait the visibility of the element.
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func whenTapActionSheetButton(at index: Int, timeout: TimeInterval?) -> Self
+
+    /// Performs a typing inside an UI element.
+    ///
+    /// - Parameters:
+    ///   - text: Text to type.
+    ///   - element: Element where to type the text.
+    ///   - shouldReplace: Replace the current text of the element. Default true.
+    ///   - timeout: _Optional_ timeout to wait the visibility of the element.
+    ///   - swipeAction: _Optional_ swipe action to find a not visible cell.
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func whenType(_ text: String, in element: Element, shouldReplace: Bool, timeout: TimeInterval?, swipeAction: SwipeAction?) -> Self
+
+    /// Performs the pick of a date from a date picker.
+    ///
+    /// - Parameters:
+    ///   - wheels: The day, month and year to pick. (The order depends on the format of your date picker).
+    ///   - timeout: _Optional_ timeout to wait the visibility of the element.
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func whenSelectDatePicker(wheels: [String], timeout: TimeInterval?) -> Self
+
+    /// Performs the tap on the GPS permission request of iOS.
+    ///
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func whenAcceptLocationRequest() -> Self
+
+    /// Performs a swipe in the screen.
+    ///
+    /// - Parameters:
+    ///   - swipeAction: Swipe action to perform.
+    ///   - timeout: _Optional_ timeout to wait the visibility of the element.
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func whenSwipe(_ swipeAction: SwipeAction, timeout: TimeInterval?) -> Self
+
+    /// Performs a scroll in a scrollable view.
+    ///
+    /// - Parameters:
+    ///   - element: Scrollable element to scroll.
+    ///   - toNormalizedSliderPosition: Position where to scroll.
+    ///   - timeout: _Optional_ timeout to wait the visibility of the element.
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func whenSlide(element: Element, toNormalizedSliderPosition: CGFloat, timeout: TimeInterval?) -> Self
 }
@@ -94,8 +172,8 @@ extension PageObjectWhen where Self: PageObjectUIElementProvider {
     }
 
     @discardableResult
-    public func whenTapCell(in parentElement: Self.Element, at index: Int, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
-        let tableElement = self.uiElement(for: parentElement, in: XCUIApplication())
+    public func whenTapCell(in tableView: Self.Element, at index: Int, timeout: TimeInterval? = nil, swipeAction: SwipeAction? = nil) -> Self {
+        let tableElement = self.uiElement(for: tableView, in: XCUIApplication())
         tableElement.waitIfNeeded(timeout: timeout)
 
         waitTableContentLoadedIfNeeded(in: tableElement, timeout: timeout)

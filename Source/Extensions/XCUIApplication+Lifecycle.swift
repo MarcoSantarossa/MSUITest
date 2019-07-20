@@ -23,6 +23,11 @@
 import XCTest
 
 extension XCUIApplication {
+    /// Launches a UI test with specific arguments.
+    ///
+    /// It sets some arguments by default. See the README.md for more details.
+    ///
+    /// - Parameter customArguments: Custom arguments to add.
     public func launchTestMode(customArguments: [String]? = nil) {
         let hiddenArgs = [
             "-FIRDebugDisabled"

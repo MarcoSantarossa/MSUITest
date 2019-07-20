@@ -22,11 +22,18 @@
 
 import XCTest
 
+/// Abstract Page object to provide the default functionality for a concrete Page object.
+/// * Attention: **None** of these methods require a custom implementation. Everything is provided with internal extensions.
 public protocol PageObject: PageObjectWhen, PageObjectShould {
 
+    /// Add a delay before continuing with the UI test flow.
+    ///
+    /// - Parameter delay: Seconds to add as delay
+    /// - Returns: itself to use in a chain of calls.
     @discardableResult
     func delay(_ delay: TimeInterval) -> Self
 
+    /// Terminates an UI test
     static func terminate()
 }
 
