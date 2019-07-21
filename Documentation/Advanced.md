@@ -10,11 +10,11 @@
 
 ## AccessibilityIdentifierProvider (AIP)
 
-### Create a new AIP
-
 In the examples of the README, we use string literals for the accessibility identifier. MSUITest provides a built-in solution to handle the identifiers in a better way.
 
-`AIP` provides an type-safe solution to assign identifiers in our app. Let's create one:
+`AIP` provides a type-safe solution to assign identifiers in our app.
+
+### Create a new AIP
 
 ```swift
 // 1
@@ -40,11 +40,11 @@ extension HomeAIP {
 
 **Note:**
 
-I used an AIP per UIViewController in the Example app. I think it's a clean way to organize the identifiers. But, if you think it's overkilling, feel free to use only one AIP for all the UIKit elements of your app.
+I used an AIP per UIViewController in the Example app. It's a clean way to organize the identifiers in small objects. But, if you think it's overkilling, feel free to use only one AIP for all the UIKit elements of your app.
 
-**Important:**
+⚠️ **Important:**
 
-You must set the file Target Membership to both the app and the UI test bundle. You will see later why we need the visibility of this file even in the UI testing world.
+You must add the file in **Target Membership** of both **app** and **UI test** target. You will see [later](#use-in-pageObject) why we need the visibility of this file even in the UI testing world.
 
 ![target membership aip](../.github/images/target_membership_aip.png)
 
@@ -74,21 +74,69 @@ class HomeViewController: UIViewController {
 
 1. The first parameter is the AIP which we want to use and the second one is the Element case which we want to assign to the specific UIKit element.
 
+### Use in PageObject
+
+```swift
+final class HomePage {
+    // 1
+    typealias Element = HomeAIP.Element
+}
+
+extension HomePage: PageObjectUIElementProvider, PageObject {
+    func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
+        let query = self.query(for: element, in: queryProvider)
+
+        // 2
+        let identifier = HomeAIP.elementIdentifier(for: element)
+        return query[identifier]
+    }
+
+    private func query(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElementQuery {
+        // 3
+        switch element {
+        case .mainView:
+            return queryProvider.otherElements
+        case .tableView:
+            return queryProvider.tables
+        }
+    }
+}
+```
+
+1. Set the HomePage Element as HomeAIP.Element to take advantage of type-safe identifiers.
+2. Use AIP `elementIdentifier` method to create the full identifier. You don't need to bother about the implementation of this method, it's already implemented for you.
+3. Use the AIP element to retrieve the XCUIElementQuery in a type-safe way.
+
+### Use in the test
+
+```swift
+class HomeTests: XCTestCase {
+
+    func test_whenLoadView_seeExpectedElements() {
+        HomePage()
+            .givenPage()
+
+            .thenIShouldSee(element: .mainView, timeout: 0.3)
+            .thenIShouldSee(element: .tableView)
+    }
+}
+```
+
 ## Launch Arguments
 
-When we launch an UI Tests, we don't have access to our app since it's a separate iOS process. Therefore, we can't communicate directly with it. If we want to inject some information in our app, we can use the launch arguments.
+When we launch UI tests, we don't have access to our app since it's a separate iOS process. Therefore, we can't communicate directly with it. If we want to inject some information in our app, we can use the launch arguments.
 
 MSUITest has a built-in method to inject arguments:
 
 ```swift
-XCUIApplication().launchTestMode([
+XCUIApplication().launchTestMode(customArguments: [
     "myArgument", "1",
     "myArgument2", "hello",
     "myArgument3", "0"
 ])
 ```
 
-Then, you can read these arguments in our app with the **UserDefaults**:
+Then, you can read these arguments in the app with the **UserDefaults**:
 
 ```swift
 if UserDefaults.standard.string(forKey: "myArgument2") == "hello" {
@@ -140,8 +188,8 @@ and in the **AppDelegate** we can catch the argument:
 
 ```swift
 if let coordinatorUnderUITest = UserDefaults.standard.string(forKey: "coordinatorUnderUITest") {
-    return UITestCoordinator(rootViewController: rootViewController,
-                            coordinatorUnderUITest: coordinatorUnderUITest)
+    appCoordinator = UITestCoordinator(rootViewController: rootViewController,
+                                        coordinatorUnderUITest: coordinatorUnderUITest)
 }
 ```
 
@@ -240,7 +288,7 @@ class HomeTests: XCTestCase {
     func test_whenLogin_seeHome() {
 
         HomePage()
-            .givenPageFromLoginPage(for: "Marco")
+            .givenPageFromLoginPage(for: "Walter White")
 
             .thenIShouldSee(element: .titleLabel, text: "Welcome")
     }
@@ -299,7 +347,9 @@ extension HomeAIP {
         }
     }
 }
+```
 
+```swift
 class HomeViewController: UIViewController {
 
     @IBOutlet private var imageView: UIImageView!
@@ -336,7 +386,9 @@ extension HomePage: PageObjectUIElementProvider, PageObject {
         }
     }
 }
+```
 
+```swift
 class HomeTests: XCTestCase {
 
     func test_whenLoadView_seeExpectedElements() {

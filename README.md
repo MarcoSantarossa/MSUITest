@@ -31,7 +31,7 @@ Unit test has a limit. It covers only isolated components. We need a way to test
 
 Getting excited? That's good, because...MSUITesting comes to the rescue! 🎉
 
-It provides a clean interface which allows everyone—even people not familiar with Swift—to read and understand the flow. We can stop wasting time googling how to fight XCUITest and focus in what matters. 😉
+It provides a clean interface which allows everyone—even people not familiar with Swift—to read and understand the flow. We can stop wasting time googling how to fight XCUITest and focus in what really matters. 😉
 
 ## Requirements
 
@@ -43,7 +43,7 @@ It provides a clean interface which allows everyone—even people not familiar w
 
 ### Cocoapods
 
-MSUITest is split in two main parts to provide then best solution at the right moment. You can take advantage of this in your **Podfile** with the following setup:
+MSUITest is split in two main parts to provide the best solution at the right moment and in the right place. You can take advantage of this in your **Podfile** with the following setup:
 
 ```
 use_frameworks!
@@ -63,16 +63,17 @@ end
 
 Do you feel old school and you don't want black magic with dependency managers ? That's fine. You need few simple steps:
 
-1. Download the project manually or through git submodules
-2. Embed `MSUITest.xcodeproj` in your workspace
-3. Add `MSUITest.framework` in `Embedded Binaries` and `Linked Frameworks and Libraries` of your iOS app.
+1. Download the project manually or through git submodules.
+2. Embed `MSUITest.xcodeproj` in your workspace.
+3. Add `MSUITest.framework` in `Embedded Binaries` and `Linked Frameworks and Libraries` in your iOS app target.
+4. Add `MSUITest.framework` in Build Phases > `Link Binary with Libraries` in your UI test target.
 
 ## Getting Started
 
-It's time to have fun.
+It's time to have fun 💃🕺
 
 **Note:**
-I suggest to check the Example project to see different use cases and how I used the library for different situations.
+I suggest to check the Example project to see different use cases and how I used the library in different situations.
 
 ### Set accessibility identifiers
 
@@ -114,8 +115,9 @@ final class HomePage {
     typealias Element = String
 }
 
+// 3
 extension HomePage: PageObjectUIElementProvider, PageObject {
-    // 3
+    // 4
     func uiElement(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElement {
         let query = self.query(for: element, in: queryProvider)
 
@@ -123,7 +125,7 @@ extension HomePage: PageObjectUIElementProvider, PageObject {
     }
 
     private func query(for element: Element, in queryProvider: XCUIElementTypeQueryProvider) -> XCUIElementQuery {
-        // 4
+        // 5
         switch element {
         case "home.mainView":
             return queryProvider.otherElements
@@ -139,11 +141,11 @@ extension HomePage: PageObjectUIElementProvider, PageObject {
 
 // MARK: - Given
 extension HomePage {
-    // 5
+    // 6
     func givenPage() -> HomePage {
         XCUIApplication().launchTestMode()
 
-        // 6
+        // 7
         return self
     }
 }
@@ -151,10 +153,11 @@ extension HomePage {
 
 1. Import the required frameworks.
 2. Set the string literal as Element. See [AccessibilityIdentifierProvider (AIP)](Documentation/Advanced.md#accessibilityidentifierprovider-aip) for a better approach.
-3. Implement the protocol method to convert the identifier to a `XCUIElement`.
-4. Create the query object to find the element. See the [Official Documentation](https://developer.apple.com/documentation/xctest/xcuielementtypequeryprovider) for a complete list.
-5. Method to load launch the test. You can see [Launch specific view](Documentation/Advanced.md#launch-specific-view) for a better approach.
-6. It's important to return `self` at the end of the method to allow a chain of functions. You'll see [later](#create-a-testcase) how the chain looks like.
+3. Implement the protocols `PageObjectUIElementProvider` and `PageObject` to inherit all the power of MSUITest.
+4. Implement the protocol method to convert the identifier to a `XCUIElement`.
+5. Create the query object to find the element. See the [Official Documentation](https://developer.apple.com/documentation/xctest/xcuielementtypequeryprovider) for a complete list.
+6. Method to load launch the test. You can see [Launch specific view](Documentation/Advanced.md#launch-specific-view) for a better approach.
+7. It's important to return `self` at the end of the method to allow a chain of functions. You'll see [later](#create-a-testcase) how the chain looks like.
 
 ### Create a TestCase
 
@@ -183,7 +186,13 @@ class HomeTests: XCTestCase {
 ```
 
 1. Create a subclass of `XCTestCase`.
-2. Instantiate the page object and have fun with a chain of "Given-When-Then" methods. Please read the code documentation for the full list of methods available.
+2. Instantiate the page object and have fun with a chain of "Given-When-Then" methods.
+
+Wait a second! Where does `thenIShouldSee` come from?! 🤯
+
+Hehe 😏 This is the power of MSUITest. The library adds several methods to the protocol `PageObject`. You don't need to bother about the implementation since everything is in protocol extensions.
+
+Please read the code documentation of `PageObject`/`PageObjectWhen`/`PageObjectShould` for the full list of methods available.
 
 ## To Do
 
