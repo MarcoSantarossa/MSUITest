@@ -1,5 +1,8 @@
 # MSUITest 🤖🔎🐛
 
+![CocoaPods Compatible](https://img.shields.io/cocoapods/v/MSUITest.svg)
+![Platform](https://img.shields.io/cocoapods/p/MSUITest.svg?style=flat)
+![Swift version](https://img.shields.io/badge/Swift-5.0-F16D39.svg?style=flat)
 [![Twitter](https://img.shields.io/twitter/url/https/MarcoSantadev.svg?label=MarcoSantaDev&style=social)](https://twitter.com/MarcoSantaDev)
 
 MSUITest is a library inspired by the classic [Gherkin syntax](http://docs.behat.org/en/v2.5/guides/1.gherkin.html) "Given-When-Then" written completely in Swift.
