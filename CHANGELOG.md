@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+* [#28](https://github.com/MarcoSantarossa/MSUITest/pull/27) - Static jazzy website
 * [#27](https://github.com/MarcoSantarossa/MSUITest/pull/27) - Badges in readme
 
 ## [1.0.1] - 2019-07-21
