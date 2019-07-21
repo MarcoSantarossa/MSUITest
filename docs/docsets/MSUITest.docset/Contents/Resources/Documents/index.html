@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MSUITest  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="MSUITest  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          MSUITest Docs
+        </a>
+         (88% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/MarcoSantarossa/MSUITest">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2Fmarcosantarossa%2Egithub%2Eio%2FMSUITest%2Fdocsets%2FMSUITest%2Exml">
+            <img class="header-icon" src="img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">MSUITest Reference</a>
+      <img class="carat" src="img/carat.png" />
+      MSUITest  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/UITestLaunchArgument.html">UITestLaunchArgument</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/UIAccessibilityIdentification.html">UIAccessibilityIdentification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/XCUIApplication.html">XCUIApplication</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/AccessibilityIdentifierProvider.html">AccessibilityIdentifierProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/PageObject.html">PageObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/PageObjectShould.html">PageObjectShould</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/PageObjectUIElementProvider.html">PageObjectUIElementProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/PageObjectWhen.html">PageObjectWhen</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/SwipeAction.html">SwipeAction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/SwipeAction/Direction.html">– Direction</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:8MSUITest3AIPa">AIP</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <h1 id='msuitest' class='heading'>MSUITest 🤖🔎🐛</h1>
+
+<p><img src="https://img.shields.io/cocoapods/v/MSUITest.svg" alt="CocoaPods Compatible">
+<img src="https://img.shields.io/cocoapods/p/MSUITest.svg?style=flat" alt="Platform">
+<img src="https://img.shields.io/badge/Swift-5.0-F16D39.svg?style=flat" alt="Swift version">
+<a href="https://twitter.com/MarcoSantaDev"><img src="https://img.shields.io/twitter/url/https/MarcoSantadev.svg?label=MarcoSantaDev&style=social" alt="Twitter"></a></p>
+
+<p>MSUITest is a library inspired by the classic <a href="http://docs.behat.org/en/v2.5/guides/1.gherkin.html">Gherkin syntax</a> <q>Given-When-Then</q> written completely in Swift.</p>
+
+<p>It&rsquo;s a wrapper of XCUITest and allows you to write human readable tests without wasting time reading Apple <q>documentation</q>. 😌</p>
+<h2 id='content' class='heading'>Content 📚</h2>
+
+<ul>
+<li><a href="#why-msuitest">Why MSUITest</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="Documentation/Advanced.md">Advanced</a></li>
+<li><a href="#to-do">To Do</a></li>
+<li><a href="#disclaimer">Disclaimer</a></li>
+<li><a href="CONTRIBUTING.md">Contributing</a></li>
+<li><a href="CHANGELOG.md">Changelog</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id='why-msuitest' class='heading'>Why MSUITest</h2>
+
+<p>UI testing has often low priority in a project. It&rsquo;s slow and flaky tests. It&rsquo;s clear that we should try to cover with unit test as much code as possible. You could be even familiar with the test pyramid:</p>
+
+<p><a href="https://martinfowler.com/articles/practical-test-pyramid.html"><img src="https://martinfowler.com/articles/practical-test-pyramid/testPyramid.png" alt="test pyramid"></a></p>
+
+<p>And I didn&rsquo;t even mention the hostile interface of XCUITest. 🤫</p>
+
+<p>So, why this library? Why should we spend effort on UI testing ? Good question, my friend.</p>
+
+<p>Unit test has a limit. It covers only isolated components. We need a way to test what our users are going to see in our iOS apps. UI testing helps to reduce tedious manual testing and regression tests.</p>
+
+<p>Getting excited? That&rsquo;s good, because&hellip;MSUITesting comes to the rescue! 🎉</p>
+
+<p>It provides a clean interface which allows everyone—even people not familiar with Swift—to read and understand the flow. We can stop wasting time googling how to fight XCUITest and focus in what really matters. 😉</p>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<ul>
+<li>iOS 10.0+</li>
+<li>Xcode 10.2+</li>
+<li>Swift 5+</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>Cocoapods</h3>
+
+<p>MSUITest is split in two main parts to provide the best solution at the right moment and in the right place. You can take advantage of this in your <strong>Podfile</strong> with the following setup:</p>
+<pre class="highlight plaintext"><code>use_frameworks!
+
+target 'YourAppTarget' do
+  pod 'MSUITest/App'
+end
+
+target 'YouUITestTarget' do
+  inherit! :search_paths
+  pod 'MSUITest'
+end
+
+</code></pre>
+<h3 id='manually' class='heading'>Manually</h3>
+
+<p>Do you feel old school and you don&rsquo;t want black magic with dependency managers ? That&rsquo;s fine. You need few simple steps:</p>
+
+<ol>
+<li>Download the project manually or through git submodules.</li>
+<li>Embed <code>MSUITest.xcodeproj</code> in your workspace.</li>
+<li>Add <code>MSUITest.framework</code> in <code>Embedded Binaries</code> and <code>Linked Frameworks and Libraries</code> in your iOS app target.</li>
+<li>Add <code>MSUITest.framework</code> in Build Phases &gt; <code>Link Binary with Libraries</code> in your UI test target.</li>
+</ol>
+<h2 id='getting-started' class='heading'>Getting Started</h2>
+
+<p>It&rsquo;s time to have fun 💃🕺</p>
+
+<p><strong>Note:</strong>
+I suggest to check the Example project to see different use cases and how I used the library in different situations.</p>
+<h3 id='set-accessibility-identifiers' class='heading'>Set accessibility identifiers</h3>
+
+<p>XCUITest needs an accessibility identifier to find an UIKit element in the screen. Therefore, our first step is to set the identifiers of all our UIKit elements in our UIViewController:</p>
+<pre class="highlight swift"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">HomeViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+
+    <span class="kd">@IBOutlet</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">titleLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">subTitleLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">loginButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">registrationButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+        <span class="n">view</span><span class="o">.</span><span class="n">accessibilityIdentifier</span> <span class="o">=</span> <span class="s">"home.mainView"</span>
+        <span class="n">titleLabel</span><span class="o">.</span><span class="n">accessibilityIdentifier</span> <span class="o">=</span> <span class="s">"home.titleLabel"</span>
+        <span class="n">subTitleLabel</span><span class="o">.</span><span class="n">accessibilityIdentifier</span> <span class="o">=</span> <span class="s">"home.subTitleLabel"</span>
+        <span class="n">loginButton</span><span class="o">.</span><span class="n">accessibilityIdentifier</span> <span class="o">=</span> <span class="s">"home.loginButton"</span>
+        <span class="n">registrationButton</span><span class="o">.</span><span class="n">accessibilityIdentifier</span> <span class="o">=</span> <span class="s">"home.registrationButton"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='create-a-page-object' class='heading'>Create a Page Object</h3>
+
+<p>MSUITest uses the <a href="https://martinfowler.com/bliki/PageObject.html">page object pattern</a>. A page object is a helper class which provides functionalities to interact with a specific screen—like loading the screen, tapping a button and search for a label.</p>
+
+<p>Let&rsquo;s create one in the <strong>UI Test target</strong>:</p>
+<pre class="highlight swift"><code><span class="c1">// 1</span>
+<span class="kd">import</span> <span class="kt">MSUITest</span>
+<span class="kd">import</span> <span class="kt">XCTest</span>
+
+<span class="kd">final</span> <span class="kd">class</span> <span class="kt">HomePage</span> <span class="p">{</span>
+    <span class="c1">// 2</span>
+    <span class="kd">typealias</span> <span class="kt">Element</span> <span class="o">=</span> <span class="kt">String</span>
+<span class="p">}</span>
+
+<span class="c1">// 3</span>
+<span class="kd">extension</span> <span class="kt">HomePage</span><span class="p">:</span> <span class="kt">PageObjectUIElementProvider</span><span class="p">,</span> <span class="kt">PageObject</span> <span class="p">{</span>
+    <span class="c1">// 4</span>
+    <span class="kd">func</span> <span class="nf">uiElement</span><span class="p">(</span><span class="k">for</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="k">in</span> <span class="nv">queryProvider</span><span class="p">:</span> <span class="kt">XCUIElementTypeQueryProvider</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElement</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">query</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="nf">query</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">element</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="n">queryProvider</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">query</span><span class="p">[</span><span class="n">element</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">query</span><span class="p">(</span><span class="k">for</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">Element</span><span class="p">,</span> <span class="k">in</span> <span class="nv">queryProvider</span><span class="p">:</span> <span class="kt">XCUIElementTypeQueryProvider</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">XCUIElementQuery</span> <span class="p">{</span>
+        <span class="c1">// 5</span>
+        <span class="k">switch</span> <span class="n">element</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"home.mainView"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">queryProvider</span><span class="o">.</span><span class="n">otherElements</span>
+        <span class="k">case</span> <span class="s">"home.titleLabel"</span><span class="p">,</span> <span class="s">"home.subTitle"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">queryProvider</span><span class="o">.</span><span class="n">staticTexts</span>
+        <span class="k">case</span> <span class="s">"home.loginButton"</span><span class="p">,</span> <span class="s">"home.registrationButton"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">queryProvider</span><span class="o">.</span><span class="n">buttons</span>
+        <span class="k">default</span><span class="p">:</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"not found: </span><span class="se">\(</span><span class="n">element</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// MARK: - Given</span>
+<span class="kd">extension</span> <span class="kt">HomePage</span> <span class="p">{</span>
+    <span class="c1">// 6</span>
+    <span class="kd">func</span> <span class="nf">givenPage</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">HomePage</span> <span class="p">{</span>
+        <span class="kt">XCUIApplication</span><span class="p">()</span><span class="o">.</span><span class="nf">launchTestMode</span><span class="p">()</span>
+
+        <span class="c1">// 7</span>
+        <span class="k">return</span> <span class="k">self</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<ol>
+<li>Import the required frameworks.</li>
+<li>Set the string literal as Element. See <a href="Documentation/Advanced.md#accessibilityidentifierprovider-aip">AccessibilityIdentifierProvider (AIP)</a> for a better approach.</li>
+<li>Implement the protocols <code><a href="Protocols/PageObjectUIElementProvider.html">PageObjectUIElementProvider</a></code> and <code><a href="Protocols/PageObject.html">PageObject</a></code> to inherit all the power of MSUITest.</li>
+<li>Implement the protocol method to convert the identifier to a <code>XCUIElement</code>.</li>
+<li>Create the query object to find the element. See the <a href="https://developer.apple.com/documentation/xctest/xcuielementtypequeryprovider">Official Documentation</a> for a complete list.</li>
+<li>Method to load launch the test. You can see <a href="Documentation/Advanced.md#launch-specific-view">Launch specific view</a> for a better approach.</li>
+<li>It&rsquo;s important to return <code>self</code> at the end of the method to allow a chain of functions. You&rsquo;ll see <a href="#create-a-testcase">later</a> how the chain looks like.</li>
+</ol>
+<h3 id='create-a-testcase' class='heading'>Create a TestCase</h3>
+
+<p>It&rsquo;s time to write the actual test. Let&rsquo;s create one in the <strong>UI Test target</strong>:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">XCTest</span>
+
+<span class="c1">// 1</span>
+<span class="kd">class</span> <span class="kt">HomeTests</span><span class="p">:</span> <span class="kt">XCTestCase</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">test_whenLoadView_seeExpectedElements</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 2</span>
+        <span class="kt">HomePage</span><span class="p">()</span>
+
+            <span class="o">.</span><span class="nf">givenPage</span><span class="p">()</span>
+
+            <span class="o">.</span><span class="nf">thenIShouldSee</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="s">"home.mainView"</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">thenIShouldSeeNavigationBar</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Home"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">thenIShouldSee</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="s">"home.titleLabel"</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="s">"Welcome"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">thenIShouldSee</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="s">"home.subTitle"</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="s">"Please login"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">thenIShouldSee</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="s">"home.loginButton"</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="s">"Log In"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">thenIShouldSee</span><span class="p">(</span><span class="nv">element</span><span class="p">:</span> <span class="s">"home.registrationButton"</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="s">"Register"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<ol>
+<li>Create a subclass of <code>XCTestCase</code>.</li>
+<li>Instantiate the page object and have fun with a chain of <q>Given-When-Then</q> methods.</li>
+</ol>
+
+<p>Wait a second! Where does <code>thenIShouldSee</code> come from?! 🤯</p>
+
+<p>Hehe 😏 This is the power of MSUITest. The library adds several methods to the protocol <code><a href="Protocols/PageObject.html">PageObject</a></code>. You don&rsquo;t need to bother about the implementation since everything is in protocol extensions.</p>
+
+<p>Please read the code documentation of <code>PageObject</code>/<code>PageObjectWhen</code>/<code>PageObjectShould</code> for the full list of methods available.</p>
+<h2 id='to-do' class='heading'>To Do</h2>
+
+<ul>
+<li>[ ] Create static website with jazzy doc</li>
+<li>[ ] Add CI + Danger</li>
+<li>[ ] Add support for UICollectionView</li>
+<li>[ ] Fix Carthage build errors</li>
+</ul>
+<h2 id='disclaimer' class='heading'>Disclaimer</h2>
+
+<ul>
+<li>I&rsquo;m the only maintainer of the library. I wasn&rsquo;t able to test all the UI cases and I would expect some bugs. If you find some, feel free to open an Issue and I would do my best to fix ASAP. I don&rsquo;t take responsibility for any problems caused by this library in a app in production.</li>
+<li>The code in the Example app is not supposed to be for production. Therefore, don&rsquo;t use it as reference for real app architecture, it should be improved.</li>
+</ul>
+<h2 id='license' class='heading'>License</h2>
+
+<p>MSUITest is released under the MIT license. <a href="LICENSE">See LICENSE</a> for details.</p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="http://marcosantadev.com/" target="_blank" rel="external">Marco Santarossa</a>. All rights reserved. (Last updated: 2019-07-21)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

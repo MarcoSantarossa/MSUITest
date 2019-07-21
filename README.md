@@ -197,7 +197,7 @@ Wait a second! Where does `thenIShouldSee` come from?! 🤯
 
 Hehe 😏 This is the power of MSUITest. The library adds several methods to the protocol `PageObject`. You don't need to bother about the implementation since everything is in protocol extensions.
 
-Please read the code documentation of `PageObject`/`PageObjectWhen`/`PageObjectShould` for the full list of methods available.
+Please read the [code documentation](https://marcosantarossa.github.io/MSUITest/) of `PageObject`/`PageObjectWhen`/`PageObjectShould` for the full list of methods available.
 
 ## To Do
 

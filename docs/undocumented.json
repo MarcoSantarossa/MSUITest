@@ -1,0 +1,68 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/MarcoSantaDev/Projects/MSUITest/Source/AIP/Provider/AccessibilityIdentifierProvider.swift",
+      "line": 48,
+      "symbol": "AccessibilityIdentifierProvider.Element",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/MarcoSantaDev/Projects/MSUITest/Source/Core/PageObjects/ElementProvider/PageObjectUIElementProvider.swift",
+      "line": 49,
+      "symbol": "PageObjectUIElementProvider.Element",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/MarcoSantaDev/Projects/MSUITest/Source/Core/PageObjects/Models/SwipeAction.swift",
+      "line": 38,
+      "symbol": "SwipeAction.Direction",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/MarcoSantaDev/Projects/MSUITest/Source/Core/PageObjects/Models/SwipeAction.swift",
+      "line": 39,
+      "symbol": "SwipeAction.Direction.up",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/MarcoSantaDev/Projects/MSUITest/Source/Core/PageObjects/Models/SwipeAction.swift",
+      "line": 40,
+      "symbol": "SwipeAction.Direction.right",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/MarcoSantaDev/Projects/MSUITest/Source/Core/PageObjects/Models/SwipeAction.swift",
+      "line": 41,
+      "symbol": "SwipeAction.Direction.down",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/MarcoSantaDev/Projects/MSUITest/Source/Core/PageObjects/Models/SwipeAction.swift",
+      "line": 42,
+      "symbol": "SwipeAction.Direction.left",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/MarcoSantaDev/Projects/MSUITest/Source/Core/PageObjects/PageObjectShould.swift",
+      "line": 28,
+      "symbol": "PageObjectShould.Element",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/MarcoSantaDev/Projects/MSUITest/Source/Core/PageObjects/PageObjectWhen.swift",
+      "line": 28,
+      "symbol": "PageObjectWhen.Element",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/MarcoSantaDev/Projects/MSUITest"
+}

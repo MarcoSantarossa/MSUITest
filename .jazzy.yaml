@@ -1,6 +1,7 @@
 author: Marco Santarossa
 author_url: http://marcosantadev.com/
 github_url: https://github.com/MarcoSantarossa/MSUITest
+root_url: https://marcosantarossa.github.io/MSUITest/
 module: MSUITest
 output: docs
 theme: fullwidth
