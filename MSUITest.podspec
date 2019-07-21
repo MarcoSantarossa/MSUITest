@@ -17,14 +17,15 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/MarcoSantarossa/MSUITest.git", :tag => "#{spec.version}" }
 
+  spec.swift_version = '5.0'
+  spec.platform = :ios, '10.0'
+
   spec.subspec "Core" do |ss|
-    ss.ios.deployment_target = '10.0'
     ss.source_files  = "Source/Core/**/*.swift"
     ss.framework  = "XCTest"
   end
 
   spec.subspec "App" do |ss|
-    ss.ios.deployment_target = '10.0'
     ss.source_files  = ["Source/AIP/**/*.swift", "Source/Core/LaunchArguments/UITestLaunchArguments.swift"]
   end
 end
