@@ -55,3 +55,15 @@ extension TextFieldPage {
         return self
     }
 }
+
+// MARK: - Then
+extension TextFieldPage {
+    @discardableResult
+    func thenIShouldSeeEmptyTextFieldWithPlaceholder() -> TextFieldPage {
+        if #available(iOS 11.0, *) {
+            return thenIShouldSee(element: .textField, text: "Try me 🤓")
+        } else {
+            return thenIShouldSee(element: .textField, text: "")
+        }
+    }
+}
