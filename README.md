@@ -15,6 +15,7 @@ It's a wrapper of XCUITest and allows you to write human readable tests without 
 * [Advanced](Documentation/Advanced.md)
 * [To Do](#to-do)
 * [Disclaimer](#disclaimer)
+* [Contributing](CONTRIBUTING.md)
 * [License](#license)
 
 ## Why MSUITest
