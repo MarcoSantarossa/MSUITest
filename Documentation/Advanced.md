@@ -2,7 +2,7 @@
 
 ## Table of contents
 
-* [AccessibilityIdentifierProvider (AIP)](#accessibilityIdentifierProvider-(AIP))
+* [AccessibilityIdentifierProvider (AIP)](#accessibilityidentifierprovider-aip)
 * [Launch Arguments](#launch-arguments)
 * [Launch specific view](#launch-specific-view)
 * [Interaction between Page Objects](#interaction-between-page-objects)

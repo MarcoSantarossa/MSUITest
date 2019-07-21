@@ -150,7 +150,7 @@ extension HomePage {
 ```
 
 1. Import the required frameworks.
-2. Set the string literal as Element. See [AccessibilityIdentifierProvider (AIP)](Documentation/Advanced.md#AccessibilityIdentifierProvider-(AIP)) for a better approach.
+2. Set the string literal as Element. See [AccessibilityIdentifierProvider (AIP)](Documentation/Advanced.md#accessibilityidentifierprovider-aip) for a better approach.
 3. Implement the protocol method to convert the identifier to a `XCUIElement`.
 4. Create the query object to find the element. See the [Official Documentation](https://developer.apple.com/documentation/xctest/xcuielementtypequeryprovider) for a complete list.
 5. Method to load launch the test. You can see [Launch specific view](Documentation/Advanced.md#launch-specific-view) for a better approach.
