@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "MSUITest"
-  spec.version      = "0.0.1"
+  spec.version      = "1.0.0"
   spec.summary      = "A Swift XCUITest wrapper inspired by Gherkin syntax."
 
   spec.description  = <<-DESC
