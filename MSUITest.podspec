@@ -23,8 +23,8 @@ Pod::Spec.new do |spec|
     ss.framework  = "XCTest"
   end
 
-  spec.subspec "AIP" do |ss|
+  spec.subspec "App" do |ss|
     ss.ios.deployment_target = '10.0'
-    ss.source_files  = "Source/AIP/**/*.swift"
+    ss.source_files  = ["Source/AIP/**/*.swift", "Source/Core/LaunchArguments/UITestLaunchArguments.swift"]
   end
 end
