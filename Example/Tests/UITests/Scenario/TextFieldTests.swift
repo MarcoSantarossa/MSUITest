@@ -30,7 +30,7 @@ class TextFieldTests: XCTestCase {
 
             .thenIShouldSee(element: .mainView, timeout: 0.3)
             .thenIShouldSeeNavigationBar(text: "TextField")
-            .thenIShouldSee(element: .textField, text: "Try me 🤓")
+            .thenIShouldSeeEmptyTextFieldWithPlaceholder()
     }
 
     func test_whenTapTextField_seeKeyboard() {
