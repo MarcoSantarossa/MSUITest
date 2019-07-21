@@ -194,7 +194,7 @@ class HomeTests: XCTestCase {
 
 ## Disclaimer
 
-* I'm the only maintainer of the library. I wasn't able to test all the UI cases and I would expect some bugs. If you find some, feel free to open an Issue and I would do my best to fix ASAP. I don't take responsibility for any problems caused by this library in a production app.
+* I'm the only maintainer of the library. I wasn't able to test all the UI cases and I would expect some bugs. If you find some, feel free to open an Issue and I would do my best to fix ASAP. I don't take responsibility for any problems caused by this library in a app in production.
 * The code in the Example app is not supposed to be for production. Therefore, don't use it as reference for real app architecture, it should be improved.
 
 ## License
